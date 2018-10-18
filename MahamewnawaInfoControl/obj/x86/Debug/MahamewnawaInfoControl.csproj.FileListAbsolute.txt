@@ -1,0 +1,9 @@
+E:\Projects\Personal\MahamewnawaInfo\MahamewnawaInfoControl\obj\x86\Debug\MahamewnawaInfoControl.Properties.Resources.resources
+E:\Projects\Personal\MahamewnawaInfo\MahamewnawaInfoControl\obj\x86\Debug\MahamewnawaInfoControl.csproj.GenerateResource.Cache
+E:\Projects\Personal\MahamewnawaInfo\MahamewnawaInfoControl\bin\Debug\MahamewnawaInfoControl.dll
+E:\Projects\Personal\MahamewnawaInfo\MahamewnawaInfoControl\bin\Debug\MahamewnawaInfoControl.pdb
+E:\Projects\Personal\MahamewnawaInfo\MahamewnawaInfoControl\obj\x86\Debug\MahamewnawaInfoControl.dll
+E:\Projects\Personal\MahamewnawaInfo\MahamewnawaInfoControl\obj\x86\Debug\MahamewnawaInfoControl.pdb
+E:\Projects\Personal\MahamewnawaInfo\MahamewnawaInfoControl\obj\x86\Debug\MahamewnawaInfoControl.csprojResolveAssemblyReference.cache
+E:\Projects\Personal\MahamewnawaInfo\MahamewnawaInfoControl\bin\Debug\DBCore.dll
+E:\Projects\Personal\MahamewnawaInfo\MahamewnawaInfoControl\bin\Debug\DBCore.pdb

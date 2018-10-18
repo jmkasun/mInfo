@@ -1,0 +1,9 @@
+D:\Projects\Personal\CCMPData\CC\CCMPData\DBCore\bin\Release\DBCore.dll
+D:\Projects\Personal\CCMPData\CC\CCMPData\DBCore\bin\Release\DBCore.pdb
+D:\Projects\Personal\CCMPData\CC\CCMPData\DBCore\obj\Release\ResolveAssemblyReference.cache
+D:\Projects\Personal\CCMPData\CC\CCMPData\DBCore\obj\Release\DBCore.dll
+D:\Projects\Personal\CCMPData\CC\CCMPData\DBCore\obj\Release\DBCore.pdb
+D:\Projects\Personal\MahamewnawaInfo\DBCore\bin\Release\DBCore.dll
+D:\Projects\Personal\MahamewnawaInfo\DBCore\bin\Release\DBCore.pdb
+D:\Projects\Personal\MahamewnawaInfo\DBCore\obj\Release\DBCore.dll
+D:\Projects\Personal\MahamewnawaInfo\DBCore\obj\Release\DBCore.pdb

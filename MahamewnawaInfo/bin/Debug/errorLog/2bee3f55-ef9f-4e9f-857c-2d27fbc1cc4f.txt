@@ -1,0 +1,18 @@
+There is already an open DataReader associated with this Connection which must be closed first.	   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at DBCore.Common.DBBase.ExecuteReader(String SQL) in e:\Projects\Personal\MahamewnawaInfo\DBCore\Common\DBBase.cs:line 131
+   at DBCore.Classes.BikkuInfo.SelectAllImage(CurrenStatus currentStatus) in e:\Projects\Personal\MahamewnawaInfo\DBCore\Classes\BikkuInfo.cs:line 849
+   at MahamewnawaInfo.Reporting.Viwer.AllBhikkuImage.showbtn_Click(Object sender, EventArgs e) in e:\Projects\Personal\MahamewnawaInfo\MahamewnawaInfo\Reporting\Viwer\AllBhikkuImage.cs:line 45
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at DevComponents.DotNetBar.ButtonX.OnClick(EventArgs e)
+   at DevComponents.DotNetBar.ButtonX.OnMouseUp(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at DevComponents.DotNetBar.PopupItemControl.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at MahamewnawaInfo.Program.Main() in e:\Projects\Personal\MahamewnawaInfo\MahamewnawaInfo\Program.cs:line 22	----------------------------------------------------	

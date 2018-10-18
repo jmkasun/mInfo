@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahamewnawaInfo", "MahamewnawaInfo\MahamewnawaInfo.csproj", "{AE5FC601-A8CF-4932-B52D-42863C3AF79D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBCore", "DBCore\DBCore.csproj", "{0A3DCCA1-7B8C-46FB-811A-E84555FCA8EA}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE5FC601-A8CF-4932-B52D-42863C3AF79D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE5FC601-A8CF-4932-B52D-42863C3AF79D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE5FC601-A8CF-4932-B52D-42863C3AF79D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE5FC601-A8CF-4932-B52D-42863C3AF79D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A3DCCA1-7B8C-46FB-811A-E84555FCA8EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3DCCA1-7B8C-46FB-811A-E84555FCA8EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3DCCA1-7B8C-46FB-811A-E84555FCA8EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3DCCA1-7B8C-46FB-811A-E84555FCA8EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

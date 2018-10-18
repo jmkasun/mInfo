@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AE5FC601-A8CF-4932-B52D-42863C3AF79D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MahamewnawaInfo</RootNamespace>
+    <AssemblyName>MahamewnawaInfo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=8.2.0.2, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CC\CCMPData\CCMPData\bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Asapuwa\MinimizedAsapuwa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\ChangeListHistryLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Asapuwa\ChangeListItemAsapuwa.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Bhikku\ChangeListItemBhikku.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\ChangeListToolstriptItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Bhikku\ChangeListItemBhikkuDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Asapuwa\ChangeListItemAsapuwaDetails.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\label.cs" />
+    <Compile Include="Common\frmComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmComment.Designer.cs">
+      <DependentUpon>frmComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\frmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\frmSearch.Designer.cs">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\MessageView.cs" />
+    <Compile Include="Common\MsgBox\frmMsgOkOnly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\MsgBox\frmMsgOkOnly.Designer.cs">
+      <DependentUpon>frmMsgOkOnly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\MsgBox\frmMsgYesNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\MsgBox\frmMsgYesNo.Designer.cs">
+      <DependentUpon>frmMsgYesNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeLst\frmChangeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeLst\frmChangeList.Designer.cs">
+      <DependentUpon>frmChangeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeLst\frmChangelistParams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeLst\frmChangelistParams.Designer.cs">
+      <DependentUpon>frmChangelistParams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmBikkuInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmBikkuInfo.Designer.cs">
+      <DependentUpon>frmBikkuInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAsapu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAsapu.Designer.cs">
+      <DependentUpon>frmAsapu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmReportViwer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReportViwer.Designer.cs">
+      <DependentUpon>frmReportViwer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmUtilityData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmUtilityData.designer.cs">
+      <DependentUpon>frmUtilityData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mahamevnainfoDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mahamevnainfoDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MDIParent1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParent1.Designer.cs">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Admin\LoginWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\LoginWindow.Designer.cs">
+      <DependentUpon>LoginWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\Viwer\BhikkuInfoReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reporting\Viwer\BhikkuInfoReport.Designer.cs">
+      <DependentUpon>BhikkuInfoReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\Viwer\ChangeListReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\Viwer\ChangeListReport.Designer.cs">
+      <DependentUpon>ChangeListReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\Viwer\rptNameIDReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\Viwer\rptNameIDReport.Designer.cs">
+      <DependentUpon>rptNameIDReport.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Classes\Asapuwa\MinimizedAsapuwa.resx">
+      <DependentUpon>MinimizedAsapuwa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\ChangeListHistryLabel.resx">
+      <DependentUpon>ChangeListHistryLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Asapuwa\ChangeListItemAsapuwa.resx">
+      <DependentUpon>ChangeListItemAsapuwa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Bhikku\ChangeListItemBhikku.resx">
+      <DependentUpon>ChangeListItemBhikku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Bhikku\ChangeListItemBhikkuDetails.resx">
+      <DependentUpon>ChangeListItemBhikkuDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classes\Asapuwa\ChangeListItemAsapuwaDetails.resx">
+      <DependentUpon>ChangeListItemAsapuwaDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmComment.resx">
+      <DependentUpon>frmComment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\frmSearch.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\MsgBox\frmMsgOkOnly.resx">
+      <DependentUpon>frmMsgOkOnly.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\MsgBox\frmMsgYesNo.resx">
+      <DependentUpon>frmMsgYesNo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeLst\frmChangeList.resx">
+      <DependentUpon>frmChangeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeLst\frmChangelistParams.resx">
+      <DependentUpon>frmChangelistParams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmBikkuInfo.resx">
+      <DependentUpon>frmBikkuInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAsapu.resx">
+      <DependentUpon>frmAsapu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReportViwer.resx">
+      <DependentUpon>frmReportViwer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmUtilityData.resx">
+      <DependentUpon>frmUtilityData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIParent1.resx">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\LoginWindow.resx">
+      <DependentUpon>LoginWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reporting\Reports\BhikkuInfi.rdlc" />
+    <EmbeddedResource Include="Reporting\Reports\BhikkuInfoNameID.rdlc" />
+    <EmbeddedResource Include="Reporting\Reports\ChangeList.rdlc" />
+    <EmbeddedResource Include="Reporting\Viwer\BhikkuInfoReport.resx">
+      <DependentUpon>BhikkuInfoReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\Viwer\ChangeListReport.resx">
+      <DependentUpon>ChangeListReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporting\Viwer\rptNameIDReport.resx">
+      <DependentUpon>rptNameIDReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="mahamevnainfoDataSet1.xsc">
+      <DependentUpon>mahamevnainfoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="mahamevnainfoDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mahamevnainfoDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="mahamevnainfoDataSet1.xss">
+      <DependentUpon>mahamevnainfoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg1231.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gnome-Edit-Find1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RedClose.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Resources\Windows_7_by_deviantarnab2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBCore\DBCore.csproj">
+      <Project>{0A3DCCA1-7B8C-46FB-811A-E84555FCA8EA}</Project>
+      <Name>DBCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refreshHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\swMenuName3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AsapuMenuName.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xf_resize_icon.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\captionImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\captionImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusBarImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatusBarImage1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangeListMenuName.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ANU_SANGHOPASTHAYAKA1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SANGHOPASTHAYAKA1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upasampada1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anu Sanghopasthayaka-Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Samanera-Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sanghopasthayaka-Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upasampada-Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anu-Sanghaopasthayaka-mouse over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Samanera-Mouse over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sanghopasthayaka-mouse over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upasampada-mouse over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anu_Sang[Btn_head].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_tail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Samanera[Btn_head].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sang[Btn_head].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upasampada[Btn_head].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ANU_SANGHOPASTHAYAKA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SAMANERA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SANGHOPASTHAYAKA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upasampada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anu Sang_Btn_head_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_body_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Btn_tail_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Samanera_Btn_head_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sang_Btn_head_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upasampada_Btn_head_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Samanera[Btn_body_hov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Samanera[Btn_head_hov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Samanera[Btn_tail_hov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upasampada[Btn_body_hov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upasampada[Btn_head_hov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upasampada[Btn_tail_hov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sang[Btn_body_hov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sang[Btn_head_hov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sang[Btn_tail_hov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anu_Sang[Btn_head_hov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anu_Sang[Btn_tail_hov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anu_Sang_Btn_body_hov.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_icon_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\captionImageMinimized.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-show_hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-show_hide1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right-show_hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\captionImage1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

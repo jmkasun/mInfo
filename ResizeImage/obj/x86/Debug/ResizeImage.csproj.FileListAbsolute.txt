@@ -1,0 +1,9 @@
+E:\Projects\Personal\MahamewnawaInfo\ResizeImage\bin\Debug\ResizeImage.exe.config
+E:\Projects\Personal\MahamewnawaInfo\ResizeImage\bin\Debug\ResizeImage.exe
+E:\Projects\Personal\MahamewnawaInfo\ResizeImage\bin\Debug\ResizeImage.pdb
+E:\Projects\Personal\MahamewnawaInfo\ResizeImage\bin\Debug\DBCore.dll
+E:\Projects\Personal\MahamewnawaInfo\ResizeImage\bin\Debug\MySql.Data.dll
+E:\Projects\Personal\MahamewnawaInfo\ResizeImage\bin\Debug\DBCore.pdb
+E:\Projects\Personal\MahamewnawaInfo\ResizeImage\obj\x86\Debug\ResizeImage.csprojResolveAssemblyReference.cache
+E:\Projects\Personal\MahamewnawaInfo\ResizeImage\obj\x86\Debug\ResizeImage.exe
+E:\Projects\Personal\MahamewnawaInfo\ResizeImage\obj\x86\Debug\ResizeImage.pdb

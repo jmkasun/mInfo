@@ -142,7 +142,7 @@ namespace MahamewnawaInfo.Forms
                     asapuwa.ContactNumber1 = tp1textBox.Text;
 
                     DataTable ds = asapuwa.SelectFind();
-                    frmSearch frmSub = new frmSearch(ds, this.Text, 4);
+                    frmSearch frmSub = new frmSearch(ds, this.Text, 4,300,200);
                     frmSub.Width = 800;
                     HandleSearch(frmSub);
                 }

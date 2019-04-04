@@ -7,3 +7,6 @@ E:\Projects\Personal\MahamewnawaInfo\ResizeImage\bin\Debug\DBCore.pdb
 E:\Projects\Personal\MahamewnawaInfo\ResizeImage\obj\x86\Debug\ResizeImage.csprojResolveAssemblyReference.cache
 E:\Projects\Personal\MahamewnawaInfo\ResizeImage\obj\x86\Debug\ResizeImage.exe
 E:\Projects\Personal\MahamewnawaInfo\ResizeImage\obj\x86\Debug\ResizeImage.pdb
+D:\Projects Kasun\mInfo\ResizeImage\obj\x86\Debug\ResizeImage.csprojResolveAssemblyReference.cache
+D:\Projects Kasun\mInfo\ResizeImage\obj\x86\Debug\ResizeImage.exe
+D:\Projects Kasun\mInfo\ResizeImage\obj\x86\Debug\ResizeImage.pdb

@@ -33,13 +33,13 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.changeListReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mahamevnainfoDataSet = new MahamewnawaInfo.mahamevnainfoDataSet();
+            this.UtilBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.utilBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.UtilBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.changeListReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mahamevnainfoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.utilBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UtilBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utilBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // changeListReportBindingSource
@@ -51,6 +51,11 @@
             // 
             this.mahamevnainfoDataSet.DataSetName = "mahamevnainfoDataSet";
             this.mahamevnainfoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // UtilBindingSource
+            // 
+            this.UtilBindingSource.DataMember = "Util";
+            this.UtilBindingSource.DataSource = this.mahamevnainfoDataSet;
             // 
             // utilBindingSource1
             // 
@@ -69,19 +74,14 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "MahamewnawaInfo.Reporting.Reports.ChangeList.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1428, 865);
+            this.reportViewer1.Size = new System.Drawing.Size(1370, 749);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // UtilBindingSource
-            // 
-            this.UtilBindingSource.DataMember = "Util";
-            this.UtilBindingSource.DataSource = this.mahamevnainfoDataSet;
             // 
             // ChangeListReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1428, 865);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.reportViewer1);
             this.DoubleBuffered = true;
             this.Name = "ChangeListReport";
@@ -90,8 +90,8 @@
             this.Load += new System.EventHandler(this.ChangeListReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.changeListReportBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mahamevnainfoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.utilBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UtilBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utilBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

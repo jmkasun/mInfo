@@ -37,7 +37,8 @@ namespace MahamewnawaInfo.Reporting.Viwer
 
         private void showbtn_Click(object sender, EventArgs e)
         {
-            CurrenStatus sts = sitiRadio.Checked ? CurrenStatus.Siti : otherPlaceRadio.Checked ? CurrenStatus.OtherPlace : upavidiRadio.Checked ? CurrenStatus.Upavidi : CurrenStatus.Apawath;
+            CurrenStatus sts = sitiRadio.Checked ? CurrenStatus.Siti : otherPlaceRadio.Checked  ? CurrenStatus.OtherPlace : upavidiRadio.Checked ? CurrenStatus.Upavidi : otherPlaceRadioResignStd.Checked? CurrenStatus.OtherPlaceResignStudent : CurrenStatus.Apawath;
+            bool isResignStudent = otherPlaceRadio.Checked;
 
             using (BikkuInfo b = new BikkuInfo(true))
             {
@@ -58,6 +59,11 @@ namespace MahamewnawaInfo.Reporting.Viwer
         private void label46_Click(object sender, EventArgs e)
         {
             otherPlaceRadio.Checked = true;
+        }
+
+        private void label461_Click(object sender, EventArgs e)
+        {
+            otherPlaceRadioResignStd.Checked = true;
         }
 
         private void label47_Click(object sender, EventArgs e)

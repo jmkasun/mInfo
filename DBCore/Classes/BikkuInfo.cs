@@ -48,9 +48,9 @@ namespace DBCore.Classes
         public int NameOfUpadyaAtHigherOrdination;
         public int District;
 
-        public int KarmacharyaHimi1;
-        public int KarmacharyaHimi2;
-        public int KarmacharyaHimi3;
+        public string KarmacharyaHimi1;
+        public string KarmacharyaHimi2;
+        public string KarmacharyaHimi3;
 
         public int MahaNayakaHimidetails;
         public int AcharyaHimiDetails;
@@ -77,7 +77,15 @@ namespace DBCore.Classes
         public bool English;
         public bool Hindhi;
 
-        public BhikkuPost Post; //   
+        /// <summary>
+        /// Tha post of bhikku
+        /// </summary>
+        public BhikkuPost Post;
+
+        /// <summary>
+        /// The type of change
+        /// </summary>
+        public BhikkuChangeType ChangeType;
 
         public List<Activity> Activities;
         public List<BhikkuAsapuHistry> AsapuHistry;
@@ -202,10 +210,9 @@ namespace DBCore.Classes
 
         public System.Data.DataTable SelectAll()
         {
-            //string SQL = "SELECT  ID,NameAssumedAtRobing FROM BikkuInfo WHERE Deleted = 0";
-
             return GetTable("Bikku_SelAll");
         }
+
         public void BindToComboNameSeparate(ComboBox combo)
         {
             DataTable tbl = SelectAllNameSeparate();
@@ -323,22 +330,8 @@ namespace DBCore.Classes
             combo.ValueMember = "ID";
         }
 
-        // check item name or code already added
-        //public bool SelectExists(int userID)
-        //{
-        //    string SQL = "SELECT ID FROM SystemUser WHERE UserName = @UserName AND (ID <> @ID OR @ID = 0)AND Deleted = 0";
-        //    //AddParameter("@p_UserName", UserName);
-        //    AddParameter("@p_ID", userID);
-
-        //    object val = ExecuteScalar(SQL);
-
-        //    return val != null;
-        //}
-
         public System.Data.DataTable SelectFind()
         {
-            //string SQL = "SELECT SamaneraNumber, b.NameAssumedAtRobing AS BhikkuName,a.AsapuwaName AS CurrentAsapuwa,d.District,b.ID FROM ((BikkuInfo b LEFT JOIN Asapuwa a ON b.TempleOfResidence = a.ID) LEFT JOIN District d ON d.ID = b.District)  " +
-            //    "WHERE NameAssumedAtRobing LIKE '%'+@NameAssumedAtRobing+'%'  AND  b.Deleted = 0";
 
             AddParameter("@p_NameAssumedAtRobing", NameAssumedAtRobing);
             AddParameter("@p_NIC", NIC);
@@ -459,9 +452,9 @@ namespace DBCore.Classes
             UpasampadaNumber = reader.GetString(31); ;
             UpasampadaRegDate = reader.GetDateTime(32);
 
-            KarmacharyaHimi1 = reader.GetInt32(33);
-            KarmacharyaHimi2 = reader.GetInt32(34);
-            KarmacharyaHimi3 = reader.GetInt32(35);
+            KarmacharyaHimi1 = reader.GetString(33);
+            KarmacharyaHimi2 = reader.GetString(34);
+            KarmacharyaHimi3 = reader.GetString(35);
             MahaNayakaHimidetails = reader.GetInt32(36);
             AcharyaHimiDetails = reader.GetInt32(37);
             UpadyaTheroName = reader.GetInt32(38);
@@ -494,15 +487,22 @@ namespace DBCore.Classes
         #endregion
 
 
-        public void BindToCombo(ComboBox combo)
+        public void BindToCombo_KarmacharyaBhikkuName(ComboBox[] comboList)
         {
-            DataTable tbl = SelectAll();
+            using (MySqlDataReader reader = ExecuteReader("Bikku_SelKarmacharyaName"))
+            {
+                while (reader.Read())
+                {
+                    string name = reader.GetString(0);
 
-            combo.DataSource = tbl;
-
-            combo.DisplayMember = "NameAssumedAtRobing";
-            combo.ValueMember = "ID";
+                    foreach (var combo in comboList)
+                    {
+                        combo.Items.Add(name);
+                    }
+                }
+            }
         }
+
 
         public void BindToComboUpadyaThero(ComboBox combo)
         {

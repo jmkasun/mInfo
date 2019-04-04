@@ -118,6 +118,7 @@ namespace MahamewnawaInfo
 
         private void logginHandle()
         {
+            //user = new User() { PermissionLevel = 3, Name = "kasun" };
             frmLoginWindow login = new frmLoginWindow(this);
 
             if (login.ShowDialog() == DialogResult.OK)

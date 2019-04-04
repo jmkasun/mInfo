@@ -1,7 +1,9 @@
-﻿namespace MahamewnawaInfo {
-    
-    
-    public partial class mahamevnainfoDataSet {
+﻿namespace MahamewnawaInfo
+{
+
+
+    public partial class mahamevnainfoDataSet
+    {
     }
 }
 

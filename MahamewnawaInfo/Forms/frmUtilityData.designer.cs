@@ -35,8 +35,8 @@
             this.addbtn = new DevComponents.DotNetBar.ButtonX();
             this.findButton = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.nameTextBoxX = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label2 = new System.Windows.Forms.Label();
+            this.nameTextBoxX = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(512, 190);
+            this.panelEx1.Size = new System.Drawing.Size(512, 254);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -68,7 +68,7 @@
             this.deleteBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.deleteBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.deleteBtn.Enabled = false;
-            this.deleteBtn.Location = new System.Drawing.Point(200, 144);
+            this.deleteBtn.Location = new System.Drawing.Point(200, 222);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(75, 25);
             this.deleteBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -80,7 +80,7 @@
             // 
             this.cancelbtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.cancelbtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.cancelbtn.Location = new System.Drawing.Point(296, 144);
+            this.cancelbtn.Location = new System.Drawing.Point(296, 222);
             this.cancelbtn.Name = "cancelbtn";
             this.cancelbtn.Size = new System.Drawing.Size(75, 25);
             this.cancelbtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -92,7 +92,7 @@
             // 
             this.addbtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.addbtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.addbtn.Location = new System.Drawing.Point(104, 144);
+            this.addbtn.Location = new System.Drawing.Point(104, 222);
             this.addbtn.Name = "addbtn";
             this.addbtn.Size = new System.Drawing.Size(75, 25);
             this.addbtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -120,7 +120,7 @@
             this.groupPanel1.Controls.Add(this.nameTextBoxX);
             this.groupPanel1.Location = new System.Drawing.Point(4, 36);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(505, 102);
+            this.groupPanel1.Size = new System.Drawing.Size(505, 180);
             // 
             // 
             // 
@@ -152,19 +152,6 @@
             this.groupPanel1.StyleMouseOver.Class = "";
             this.groupPanel1.TabIndex = 37;
             // 
-            // nameTextBoxX
-            // 
-            // 
-            // 
-            // 
-            this.nameTextBoxX.Border.Class = "TextBoxBorder";
-            this.nameTextBoxX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTextBoxX.Location = new System.Drawing.Point(16, 40);
-            this.nameTextBoxX.Multiline = true;
-            this.nameTextBoxX.Name = "nameTextBoxX";
-            this.nameTextBoxX.Size = new System.Drawing.Size(477, 39);
-            this.nameTextBoxX.TabIndex = 35;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -175,11 +162,24 @@
             this.label2.TabIndex = 36;
             this.label2.Text = "label";
             // 
+            // nameTextBoxX
+            // 
+            // 
+            // 
+            // 
+            this.nameTextBoxX.Border.Class = "TextBoxBorder";
+            this.nameTextBoxX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameTextBoxX.Location = new System.Drawing.Point(16, 40);
+            this.nameTextBoxX.Multiline = true;
+            this.nameTextBoxX.Name = "nameTextBoxX";
+            this.nameTextBoxX.Size = new System.Drawing.Size(477, 124);
+            this.nameTextBoxX.TabIndex = 35;
+            // 
             // frmUtilityData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 190);
+            this.ClientSize = new System.Drawing.Size(512, 254);
             this.Controls.Add(this.panelEx1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -16,7 +16,7 @@ using DevComponents.DotNetBar;
 
 namespace MahamewnawaInfo.Forms
 {
-    public delegate int AddDeleteChangeItem(int changeListID, int asapuwaID, int bhikkuID, DBCore.BhikkuPost post, bool isUpasampanna);
+    public delegate int AddDeleteChangeItem(int changeListID, int asapuwaID, int bhikkuID, DBCore.BhikkuPost post, DBCore.BhikkuChangeType changetype, bool isUpasampanna);
     public delegate void UpdateChangeItemFinalizeAsapuwa(int asapuwaID, bool isAdd);
 
     public partial class frmChangeList : DevComponents.DotNetBar.Office2007Form
@@ -404,7 +404,7 @@ namespace MahamewnawaInfo.Forms
                     {
                         foreach (ChangeListItemBhikku bhikku in RmenuItem.asapuChangeListItem.bhikkuList)
                         {
-                            change.AddBhikkuAsapuwa(ChangeListID, RmenuItem.asapuChangeListItem.asapuwaID, bhikku.bInfo.ID, bhikku.bInfo.Post);
+                            change.AddBhikkuAsapuwa(ChangeListID, RmenuItem.asapuChangeListItem.asapuwaID, bhikku.bInfo.ID, bhikku.bInfo.Post, bhikku.bInfo.ChangeType);
                         }
                     }
                 }
@@ -413,7 +413,7 @@ namespace MahamewnawaInfo.Forms
 
 
 
-        public int AddDeleteChangeItem(int bhikkuChangeListID, int asapuwaID, int bhikkuID, DBCore.BhikkuPost post, bool isUpasampanna)
+        public int AddDeleteChangeItem(int bhikkuChangeListID, int asapuwaID, int bhikkuID, DBCore.BhikkuPost post, DBCore.BhikkuChangeType changeType, bool isUpasampanna)
         {
 
             using (ChangeList change = new ChangeList(true))
@@ -442,7 +442,7 @@ namespace MahamewnawaInfo.Forms
 
                     setSummaryCounts();
 
-                    return change.AddBhikkuAsapuwa(ChangeListID, asapuwaID, bhikkuID, post);
+                    return change.AddBhikkuAsapuwa(ChangeListID, asapuwaID, bhikkuID, post, changeType);
                 }
                 else
                 {
@@ -464,7 +464,7 @@ namespace MahamewnawaInfo.Forms
                     }
                     else
                     {
-                        change.UpdateBhikkuAsapuwa(bhikkuChangeListID, post);
+                        change.UpdateBhikkuAsapuwa(bhikkuChangeListID, post,changeType);
                         return bhikkuChangeListID;
                     }
                 }
@@ -494,7 +494,8 @@ namespace MahamewnawaInfo.Forms
                     ChangeListItemBhikku cb = BhikkuDict[ListBhikku.BhikkuID];
                     cb.ChanageListID = ListBhikku.ID;
                     cb.bInfo.Post = ListBhikku.Post;
-                    cb.setOriginalImage(cb.bInfo.BhikkuType, false, false);
+                    cb.bInfo.ChangeType = ListBhikku.ChangeType;
+                    cb.setOriginalImage(cb.bInfo.BhikkuType, cb.bInfo.ChangeType, false, false);
                     AsapuDict[ListBhikku.AsapuwaID].AddBhikku(cb);
 
                     if (cb.bInfo.IsUpasampanna)
@@ -596,7 +597,7 @@ namespace MahamewnawaInfo.Forms
                 {
                     searchIntervel = 0;
                     searchMode = 0;
-                    searchBhikku.setOriginalImage(searchBhikku.bInfo.BhikkuType, false, false);
+                    searchBhikku.setOriginalImage(searchBhikku.bInfo.BhikkuType, searchBhikku.bInfo.ChangeType, false, false);
                     timer1.Enabled = false;
                     searchBhikku = null;
                 }
@@ -625,7 +626,7 @@ namespace MahamewnawaInfo.Forms
                     searchBhikku = BhikkuDict[selectedIndex];
                     searchBhikku.Select();
                     timer1.Enabled = true;
-                    searchBhikku.setOriginalImage(searchBhikku.bInfo.BhikkuType, true, false);
+                    searchBhikku.setOriginalImage(searchBhikku.bInfo.BhikkuType, searchBhikku.bInfo.ChangeType, true, false);
                 }
             }
         }

@@ -31,7 +31,7 @@ namespace MahamewnawaInfo
                 }
 
                 File.WriteAllText(folderPath + Guid.NewGuid() + ".txt", ex.Message + "\r\t" + ex.StackTrace + "\r\t----------------------------------------------------\r\t");
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
     }

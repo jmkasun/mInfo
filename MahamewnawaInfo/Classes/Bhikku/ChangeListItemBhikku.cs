@@ -78,7 +78,7 @@ namespace MahamewnawaInfo.Classes
                 }
 
 
-                setOriginalImage(bInfo.BhikkuType, false, isDraged);
+                setOriginalImage(bInfo.BhikkuType, bInfo.ChangeType, false, isDraged);
 
                 this.Controls.Add(imagePicbox);
                 this.Controls.Add(BodyButton);
@@ -146,13 +146,13 @@ namespace MahamewnawaInfo.Classes
 
         void ChangeListLabel_MouseLeave(object sender, EventArgs e)
         {
-            setOriginalImage(bInfo.BhikkuType, false, isDraged);
+            setOriginalImage(bInfo.BhikkuType, bInfo.ChangeType, false, isDraged);
         }
 
         void ChangeListLabel_MouseEnter(object sender, EventArgs e)
         {
             this.Parent.Focus();
-            setOriginalImage(bInfo.BhikkuType, true, isDraged);
+            setOriginalImage(bInfo.BhikkuType, bInfo.ChangeType, true, isDraged);
         }
 
         public void resetMenu_Click(object sender, EventArgs e)
@@ -168,19 +168,19 @@ namespace MahamewnawaInfo.Classes
 
         private void ReAssignProperies()
         {
-            if (this.Asapuwa != null)
+            if (this.Asapuwa != null )
                 this.Asapuwa.RecalculateCounts();
 
-            setOriginalImage(bInfo.BhikkuType, false, isDraged);
+            setOriginalImage(bInfo.BhikkuType, bInfo.ChangeType, false, isDraged);
 
             if (this.CloneLabel != null)
             {
-                this.CloneLabel.setOriginalImage(bInfo.BhikkuType, false, false);
+                this.CloneLabel.setOriginalImage(bInfo.BhikkuType, bInfo.ChangeType, false, false);
             }
 
             if (isDraged)
             {
-                AddChangeItemTable(ChanageListID, Asapuwa.asapuwaID, bInfo.ID, bInfo.Post, bInfo.IsUpasampanna);
+                AddChangeItemTable(ChanageListID, Asapuwa.asapuwaID, bInfo.ID, bInfo.Post, bInfo.ChangeType, bInfo.IsUpasampanna);
             }
 
         }
@@ -194,12 +194,26 @@ namespace MahamewnawaInfo.Classes
         public void resetPostMenu_Click(object sender, EventArgs e)
         {
             this.bInfo.Post = DBCore.BhikkuPost.NAN;
+            this.bInfo.ChangeType = DBCore.BhikkuChangeType.Normal;
             ReAssignProperies();
         }
 
         public void bhikkuDetailsMenu_Click(object sender, EventArgs e)
         {
             LoadBhikkuDetails();
+        }
+
+
+        public void onRequestMenu_Click(object sender, EventArgs e)
+        {
+            this.bInfo.ChangeType = DBCore.BhikkuChangeType.onRequest;
+            ReAssignProperies();
+        }
+
+        public void onSuSwRequestMenu_Click(object sender, EventArgs e)
+        {
+            this.bInfo.ChangeType = DBCore.BhikkuChangeType.OnSuSwRequest;
+            ReAssignProperies();
         }
 
         public void Reset()
@@ -212,7 +226,7 @@ namespace MahamewnawaInfo.Classes
             //}
 
             // delete
-            AddChangeItemTable(ChanageListID, -1, -1, DBCore.BhikkuPost.NAN, bInfo.IsUpasampanna);
+            AddChangeItemTable(ChanageListID, -1, -1, DBCore.BhikkuPost.NAN, DBCore.BhikkuChangeType.Normal, bInfo.IsUpasampanna);
 
             ChanageListID = 0;
 
@@ -232,7 +246,7 @@ namespace MahamewnawaInfo.Classes
                 Asapuwa.PrepareNamelist();
             }
 
-            setOriginalImage(bInfo.BhikkuType, false, isDraged);
+            setOriginalImage(bInfo.BhikkuType, bInfo.ChangeType, false, isDraged);
         }
 
         void label_MouseDown(object sender, MouseEventArgs e)
@@ -240,20 +254,20 @@ namespace MahamewnawaInfo.Classes
             if (!isDraged && e.Button == System.Windows.Forms.MouseButtons.Left)
             {
                 DoDragDrop(this, DragDropEffects.Copy);
-            }
+            }            
         }
+
 
         internal void DoDrag(ChangeListItemAsapuwa asapuwa)
         {
-
             this.isDraged = true;
-            setOriginalImage(bInfo.BhikkuType, false, isDraged);
+            setOriginalImage(bInfo.BhikkuType, bInfo.ChangeType, false, isDraged);
             this.Asapuwa = asapuwa;
             CreateAsapuwaLabel();
 
             if (ChanageListID == 0)
             {
-                ChanageListID = AddChangeItemTable(0, asapuwa.asapuwaID, bInfo.ID, bInfo.Post, bInfo.IsUpasampanna);
+                ChanageListID = AddChangeItemTable(0, asapuwa.asapuwaID, bInfo.ID, bInfo.Post, bInfo.ChangeType, bInfo.IsUpasampanna);
             }
         }
 
@@ -286,9 +300,9 @@ namespace MahamewnawaInfo.Classes
         //}
 
 
-        public void setOriginalImage(DBCore.BhikkuType bType, bool hover, bool isdraged)
+        public void setOriginalImage(DBCore.BhikkuType bType,DBCore.BhikkuChangeType changeType, bool hover, bool isdraged)
         {
-            List<Image> list = Utility.GetBhikkuLabelImageList(bType, isdraged, hover);
+            List<Image> list = Utility.GetBhikkuLabelImageList(bType, changeType, isdraged, hover);
             this.HeadButton.BackgroundImage = list[2];
             this.BodyButton.BackgroundImage = list[0];
             this.RearButton.BackgroundImage = list[1];
@@ -361,9 +375,19 @@ namespace MahamewnawaInfo.Classes
 
             MenuItem bhikkuDetailsMenu = new MenuItem("විස්තර");
             bhikkuDetailsMenu.Click += new EventHandler(bhikkuDetailsMenu_Click);
+            
 
+            MenuItem onRequestMenu = new MenuItem("ඉල්ලීමක් මත මාරු කරන ලද");
+            onRequestMenu.Click += new EventHandler(onRequestMenu_Click);
 
-            return new ContextMenu(new MenuItem[] { bhikkuDetailsMenu, resetMenu, emptyPostMenu, suMenu, asuMenu, resetPostMenu });
+            MenuItem onSuSwRequestMenu = new MenuItem("සං.උ. ස්වගේ ඉල්ලීමක් මත මාරු කරන ලද");
+            onSuSwRequestMenu.Click += new EventHandler(onSuSwRequestMenu_Click);
+
+            return new ContextMenu(new MenuItem[]
+            {
+             bhikkuDetailsMenu, resetMenu, emptyPostMenu,onRequestMenu,
+             onSuSwRequestMenu,suMenu,asuMenu, resetPostMenu
+            });
         }
 
 

@@ -19,6 +19,7 @@ namespace MahamewnawaInfo.Common
         DataTable dt = null;
         int maxColumnCount = 3;
         int firstColWidth = -1;
+        int secondColWidth = -1;
 
         public frmSearch(DataTable dt, string text, int _maxColCount)
         {
@@ -28,10 +29,11 @@ namespace MahamewnawaInfo.Common
         }
 
 
-        public frmSearch(DataTable dt, string text, int _maxColCount,int firstColumnWidth)
+        public frmSearch(DataTable dt, string text, int _maxColCount,int firstColumnWidth,int _secondColWidth=-1)
         {
             maxColumnCount = _maxColCount;
             firstColWidth = firstColumnWidth;
+            secondColWidth = _secondColWidth;
 
             Init(dt, text);
         }
@@ -124,27 +126,32 @@ namespace MahamewnawaInfo.Common
         {
             try
             {
-                    if (dt.Rows.Count == 0)
-                    {
-                        MessageView.ShowWarningMsg("No record(s) found");
-                        this.Dispose();
-                    }
-                    dgvSearch.DataSource = dt;
+                if (dt.Rows.Count == 0)
+                {
+                    MessageView.ShowWarningMsg("No record(s) found");
+                    this.Dispose();
+                }
+                dgvSearch.DataSource = dt;
 
-                    // hide extra fields
+                // hide extra fields
 
-                    for (int i = 0; i < dgvSearch.Columns.Count; i++)
-                    {
-                        if (maxColumnCount < (i + 1))
-                            dgvSearch.Columns[i].Visible = false;
-                    }
+                for (int i = 0; i < dgvSearch.Columns.Count; i++)
+                {
+                    if (maxColumnCount < (i + 1))
+                        dgvSearch.Columns[i].Visible = false;
+                }
 
-                   Utility.SetDatagridViewRow(dgvSearch);
+                Utility.SetDatagridViewRow(dgvSearch);
 
-                    if (firstColWidth > 0 && dgvSearch.Columns.Count > 0)
-                    {
-                        dgvSearch.Columns[0].Width = firstColWidth;
-                    }
+                if (firstColWidth > 0 && dgvSearch.Columns.Count > 0)
+                {
+                    dgvSearch.Columns[0].Width = firstColWidth;
+                }
+
+                if (secondColWidth > 0 && dgvSearch.Columns.Count > 1)
+                {
+                    dgvSearch.Columns[1].Width = secondColWidth;
+                }
 
             }
             catch (Exception ex)

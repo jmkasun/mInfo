@@ -84,7 +84,8 @@ namespace MahamewnawaInfo.Forms
 
                             if (ret == 1)
                             {
-                                MessageView.ShowMsg("Sucessfully Added");
+                                statusLbl.Text = "Sucessfully Added";
+                                timer1.Enabled = true;
                                 clear();
                             }
 
@@ -131,7 +132,9 @@ namespace MahamewnawaInfo.Forms
 
                                 if (ret == 1 && sender.ToString() != nextBtn.Text)
                                 {
-                                    MessageView.ShowMsg("Sucessfully Updated");
+                                    statusLbl.Text = "Sucessfully Updated";
+                                    timer1.Enabled = true;
+
                                     clear();
                                 }
                             }
@@ -189,9 +192,9 @@ namespace MahamewnawaInfo.Forms
                 bInfo.UpasampadaNumber = upasampadaNumberTextbox.Text;
                 bInfo.UpasampadaRegDate = upasampadaRegDate.Value;
 
-                bInfo.KarmacharyaHimi1 = karmacharyaHimi1.SelectedValue == null ? 0 : (int)karmacharyaHimi1.SelectedValue;
-                bInfo.KarmacharyaHimi2 = karmacharyaHimi2.SelectedValue == null ? 0 : (int)karmacharyaHimi2.SelectedValue;
-                bInfo.KarmacharyaHimi3 = karmacharyaHimi3.SelectedValue == null ? 0 : (int)karmacharyaHimi3.SelectedValue;
+                bInfo.KarmacharyaHimi1 = karmacharyaHimi1.Text; // == null ? 0 : (int)karmacharyaHimi1.SelectedValue;
+                bInfo.KarmacharyaHimi2 = karmacharyaHimi2.Text; //.SelectedValue == null ? 0 : (int)karmacharyaHimi2.SelectedValue;
+                bInfo.KarmacharyaHimi3 = karmacharyaHimi3.Text; //.SelectedValue == null ? 0 : (int)karmacharyaHimi3.SelectedValue;
 
                 bInfo.UpasampadaMahaNayakaHimidetails = upasampadaMahanayakaHimiCombo.SelectedValue == null ? 0 : (int)upasampadaMahanayakaHimiCombo.SelectedValue;
                 bInfo.UpasampadaAcharyaHimiDetails = upasampadaAcharyaHimiCombo.SelectedValue == null ? 0 : (int)upasampadaAcharyaHimiCombo.SelectedValue;
@@ -206,7 +209,7 @@ namespace MahamewnawaInfo.Forms
             bInfo.Country = countryCombo.SelectedValue == null ? 0 : (int)countryCombo.SelectedValue;
             bInfo.Number = (int)numberNumericUpDown.Value;
 
-            bInfo.CurrentStatus = (DBCore.CurrenStatus)(sitiRadio.Checked ? 1 : otherPlaceRadio.Checked ? 2 : upavidiRadio.Checked ? 3 : 5);
+            bInfo.CurrentStatus = (DBCore.CurrenStatus)(sitiRadio.Checked ? 1 : otherPlaceRadio.Checked ? 2 : upavidiRadio.Checked ? 3 : otherPlaceResignStdRadio.Checked ? 6 : 5);
             bInfo.CurrentStatusComment = bInfo.CurrentStatus == DBCore.CurrenStatus.Siti ? string.Empty : currentStatusComment;
             bInfo.HomeTP2 = hometp2Text.Text;
 
@@ -348,6 +351,8 @@ namespace MahamewnawaInfo.Forms
             nextBtn.Visible = false;
             prevBtn.Visible = false;
             nextPrevbInfo = null;
+            sitiRadio.Checked = true;
+            addNoteBtn.Visible = false;
         }
 
         private void SetNextNumber()
@@ -487,7 +492,7 @@ namespace MahamewnawaInfo.Forms
                     bInfo.NameAssumedAtRobing = nameOfAssumedAtRobinCombo.Text;
 
                     DataTable ds = bInfo.SelectFind();
-                    frmSearch frmSub = new frmSearch(ds, this.Text, 4);
+                    frmSearch frmSub = new frmSearch(ds, this.Text, 4, 70, 250);
                     frmSub.Width = 800;
 
                     // if select a member
@@ -672,9 +677,9 @@ namespace MahamewnawaInfo.Forms
             upasampadaNumberTextbox.Text = bInfo.UpasampadaNumber;
             upasampadaRegDate.Value = bInfo.UpasampadaRegDate;
 
-            karmacharyaHimi1.SelectedValue = bInfo.KarmacharyaHimi1;
-            karmacharyaHimi2.SelectedValue = bInfo.KarmacharyaHimi2;
-            karmacharyaHimi3.SelectedValue = bInfo.KarmacharyaHimi3;
+            karmacharyaHimi1.Text = bInfo.KarmacharyaHimi1;
+            karmacharyaHimi2.Text = bInfo.KarmacharyaHimi2;
+            karmacharyaHimi3.Text = bInfo.KarmacharyaHimi3;
 
             mahanayakaHimiCombo.SelectedValue = bInfo.MahaNayakaHimidetails;
             acharyaHimiCombo.SelectedValue = bInfo.AcharyaHimiDetails;
@@ -712,6 +717,11 @@ namespace MahamewnawaInfo.Forms
                 case DBCore.CurrenStatus.Apawath:
                     {
                         apawathRadio.Checked = true;
+                        break;
+                    }
+                case DBCore.CurrenStatus.OtherPlaceResignStudent:
+                    {
+                        otherPlaceResignStdRadio.Checked = true;
                         break;
                     }
             }
@@ -806,21 +816,10 @@ namespace MahamewnawaInfo.Forms
 
                 using (BikkuInfo bInfo = new BikkuInfo(true))
                 {
-                    bInfo.BindToCombo(karmacharyaHimi1);
+                    bInfo.BindToCombo_KarmacharyaBhikkuName(new ComboBox[] { karmacharyaHimi1, karmacharyaHimi2, karmacharyaHimi3 });
                 }
-                karmacharyaHimi1.SelectedIndex = -1;
 
-                using (BikkuInfo bInfo = new BikkuInfo(true))
-                {
-                    bInfo.BindToCombo(karmacharyaHimi2);
-                }
-                karmacharyaHimi2.SelectedIndex = -1;
-
-                using (BikkuInfo bInfo = new BikkuInfo(true))
-                {
-                    bInfo.BindToCombo(karmacharyaHimi3);
-                }
-                karmacharyaHimi3.SelectedIndex = -1;
+                karmacharyaHimi1.SelectedIndex = karmacharyaHimi2.SelectedIndex = karmacharyaHimi3.SelectedIndex = -1;
 
                 bhikkuLoading = true;
                 using (BikkuInfo bInfo = new BikkuInfo(true))
@@ -966,7 +965,7 @@ namespace MahamewnawaInfo.Forms
 
                             if (histryID == 0)
                             {
-                                info.AddAsapuHistry(histry.AsapuID, histry.FromDate, histry.ToDate, histry.Post, histry.Note,0);
+                                info.AddAsapuHistry(histry.AsapuID, histry.FromDate, histry.ToDate, histry.Post, histry.Note, 0);
                             }
                             else
                             {
@@ -1581,28 +1580,32 @@ namespace MahamewnawaInfo.Forms
 
         private void otherPlaceRadio_CheckedChanged(object sender, EventArgs e)
         {
-            if (!otherPlaceRadio.Checked || isSearch)
+            if (((RadioButton)sender).Checked)
             {
-                return;
+                if ((otherPlaceRadio.Checked || otherPlaceResignStdRadio.Checked) && !isSearch)
+                {
+                    frmComment comment = new frmComment(currentStatusComment);
+                    if (comment.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        currentStatusComment = comment.Comment;
+                    }
+                }
             }
 
-            frmComment comment = new frmComment(currentStatusComment);
-            if (comment.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                currentStatusComment = comment.Comment;
-            }
             isSearch = false;
         }
 
         private void label46_DoubleClick(object sender, EventArgs e)
         {
-            if (otherPlaceRadio.Checked || upavidiRadio.Checked)
+            if (((RadioButton)sender).Checked)
             {
-                frmComment comment = new frmComment(currentStatusComment);
-                if (comment.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                if (otherPlaceResignStdRadio.Checked || otherPlaceRadio.Checked || upavidiRadio.Checked)
                 {
-                    currentStatusComment = comment.Comment;
+                    addNoteBtn.Visible = true;
                 }
+            }else
+            {
+                addNoteBtn.Visible = false;
             }
         }
 
@@ -1767,7 +1770,7 @@ namespace MahamewnawaInfo.Forms
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void numberOfMonths_Leave(object sender, EventArgs e)
@@ -1826,6 +1829,11 @@ namespace MahamewnawaInfo.Forms
             otherPlaceRadio.Checked = true;
         }
 
+        private void label461_Click(object sender, EventArgs e)
+        {
+            otherPlaceResignStdRadio.Checked = true;
+        }
+
         private void label47_Click(object sender, EventArgs e)
         {
             upavidiRadio.Checked = true;
@@ -1836,6 +1844,20 @@ namespace MahamewnawaInfo.Forms
             apawathRadio.Checked = true;
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            statusLbl.Visible = false;
+            timer1.Enabled = false;
+        }
+
+        private void addNoteBtn_Click(object sender, EventArgs e)
+        {
+            frmComment comment = new frmComment(currentStatusComment);
+            if (comment.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                currentStatusComment = comment.Comment;
+            }
+        }
     }
 }
 

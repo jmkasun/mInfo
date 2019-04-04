@@ -138,7 +138,7 @@ namespace MahamewnawaInfo.Common
             }
         }
 
-        public static List<Image> GetBhikkuLabelImageList(BhikkuType bhikkuType, bool isDraged, bool hover)
+        public static List<Image> GetBhikkuLabelImageList(BhikkuType bhikkuType, BhikkuChangeType changeType, bool isDraged, bool hover)
         {
             List<Image> imgList = new List<Image>();
 
@@ -162,7 +162,7 @@ namespace MahamewnawaInfo.Common
                     {
                         if (isDraged)
                         {
-                            imgList.Add(global::MahamewnawaInfo.Properties.Resources.Sang_Btn_head_dis);
+                            imgList.Add(DrowOnImage(global::MahamewnawaInfo.Properties.Resources.Sang_Btn_head_dis, changeType));
                         }
                         else
                         {
@@ -170,11 +170,11 @@ namespace MahamewnawaInfo.Common
                             {
                                 imgList.Add(global::MahamewnawaInfo.Properties.Resources.Sang_Btn_body_hov);
                                 imgList.Add(global::MahamewnawaInfo.Properties.Resources.Sang_Btn_tail_hov);
-                                imgList.Add(global::MahamewnawaInfo.Properties.Resources.Sang_Btn_head_hov);
+                                imgList.Add(DrowOnImage(global::MahamewnawaInfo.Properties.Resources.Sang_Btn_head_hov, changeType));
                             }
                             else
                             {
-                                imgList.Add(global::MahamewnawaInfo.Properties.Resources.Sang_Btn_head_);
+                                imgList.Add(DrowOnImage(global::MahamewnawaInfo.Properties.Resources.Sang_Btn_head_, changeType));
                             }
                         }
 
@@ -184,7 +184,7 @@ namespace MahamewnawaInfo.Common
                     {
                         if (isDraged)
                         {
-                            imgList.Add(global::MahamewnawaInfo.Properties.Resources.Anu_Sang_Btn_head_dis);
+                            imgList.Add(DrowOnImage(global::MahamewnawaInfo.Properties.Resources.Anu_Sang_Btn_head_dis, changeType));
                         }
                         else
                         {
@@ -192,11 +192,11 @@ namespace MahamewnawaInfo.Common
                             {
                                 imgList.Add(global::MahamewnawaInfo.Properties.Resources.Anu_Sang_Btn_body_hov);
                                 imgList.Add(global::MahamewnawaInfo.Properties.Resources.Anu_Sang_Btn_tail_hov);
-                                imgList.Add(global::MahamewnawaInfo.Properties.Resources.Anu_Sang_Btn_head_hov);
+                                imgList.Add(DrowOnImage(global::MahamewnawaInfo.Properties.Resources.Anu_Sang_Btn_head_hov, changeType));
                             }
                             else
                             {
-                                imgList.Add(global::MahamewnawaInfo.Properties.Resources.Anu_Sang_Btn_head_);
+                                imgList.Add(DrowOnImage(global::MahamewnawaInfo.Properties.Resources.Anu_Sang_Btn_head_, changeType));
                             }
                         }
 
@@ -206,7 +206,7 @@ namespace MahamewnawaInfo.Common
                     {
                         if (isDraged)
                         {
-                            imgList.Add(global::MahamewnawaInfo.Properties.Resources.Upasampada_Btn_head_dis);
+                            imgList.Add(DrowOnImage(global::MahamewnawaInfo.Properties.Resources.Upasampada_Btn_head_dis, changeType));
                         }
                         else
                         {
@@ -214,11 +214,11 @@ namespace MahamewnawaInfo.Common
                             {
                                 imgList.Add(global::MahamewnawaInfo.Properties.Resources.Upasampada_Btn_body_hov);
                                 imgList.Add(global::MahamewnawaInfo.Properties.Resources.Upasampada_Btn_tail_hov);
-                                imgList.Add(global::MahamewnawaInfo.Properties.Resources.Upasampada_Btn_head_hov);
+                                imgList.Add(DrowOnImage(global::MahamewnawaInfo.Properties.Resources.Upasampada_Btn_head_hov, changeType));
                             }
                             else
                             {
-                                imgList.Add(global::MahamewnawaInfo.Properties.Resources.Upasampada_Btn_head_);
+                                imgList.Add(DrowOnImage(global::MahamewnawaInfo.Properties.Resources.Upasampada_Btn_head_, changeType));
                             }
                         }
 
@@ -228,7 +228,7 @@ namespace MahamewnawaInfo.Common
                     {
                         if (isDraged)
                         {
-                            imgList.Add(global::MahamewnawaInfo.Properties.Resources.Samanera_Btn_head_dis);
+                            imgList.Add(DrowOnImage(global::MahamewnawaInfo.Properties.Resources.Samanera_Btn_head_dis, changeType));
                         }
                         else
                         {
@@ -236,12 +236,12 @@ namespace MahamewnawaInfo.Common
                             {
                                 imgList.Add(global::MahamewnawaInfo.Properties.Resources.Samanera_Btn_body_hov);
                                 imgList.Add(global::MahamewnawaInfo.Properties.Resources.Samanera_Btn_tail_hov);
-                                imgList.Add(global::MahamewnawaInfo.Properties.Resources.Samanera_Btn_head_hov);
-
+                                imgList.Add(DrowOnImage(global::MahamewnawaInfo.Properties.Resources.Samanera_Btn_head_hov, changeType));
                             }
                             else
                             {
-                                imgList.Add(global::MahamewnawaInfo.Properties.Resources.Samanera_Btn_head_);
+                                imgList.Add(DrowOnImage(global::MahamewnawaInfo.Properties.Resources.Samanera_Btn_head_, changeType));
+
                             }
                         }
 
@@ -255,7 +255,26 @@ namespace MahamewnawaInfo.Common
 
         }
 
+        private static Bitmap DrowOnImage(Bitmap image, BhikkuChangeType changeType)
+        {
+            if (changeType == BhikkuChangeType.OnSuSwRequest || changeType == BhikkuChangeType.onRequest)
+            {
 
+                Pen blackPen = new Pen(changeType == BhikkuChangeType.OnSuSwRequest ? Color.Red : Color.Blue, 3);
+
+                int x1 = image.Width - 5;
+                int y1 = 0;
+                int x2 = image.Width - 5;
+                int y2 = image.Height - 2;
+                // Draw line to screen.
+                using (var graphics = Graphics.FromImage(image))
+                {
+                    graphics.DrawLine(blackPen, x1, y1, x2, y2);
+                }
+            }
+
+            return image;
+        }
 
         public static string GetPostString(DBCore.BhikkuPost post)
         {

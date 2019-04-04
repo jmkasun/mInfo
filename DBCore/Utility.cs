@@ -22,11 +22,57 @@ namespace DBCore
 
     public enum UtilityDataName { OtherLang = 1, MahanayakaHimi = 2, acharyaHimi = 3, Nikaya = 4, UpadyaHimi = 5, placeRobing = 6, PlaceUpasampada = 7, Country = 8 };
 
-    public enum CurrenStatus { Siti = 1, OtherPlace = 2, Upavidi = 3, all = 4, Apawath = 5 };
+    public enum CurrenStatus
+    {
+        /// <summary>
+        /// Asapuwe siti
+        /// </summary>
+        Siti = 1,
+
+        /// <summary>
+        /// has left asapuwa
+        /// </summary>
+        OtherPlace = 2,
+
+        /// <summary>
+        /// Upavidi wee atha
+        /// </summary>
+        Upavidi = 3,
+
+        all = 4,
+
+        /// <summary>
+        /// Passed away
+        /// </summary>
+        Apawath = 5,
+
+        /// <summary>
+        /// has left asapuwa,ශිෂ්‍ය භාවයෙන් ඉවත් වී සිටී
+        /// </summary>
+        OtherPlaceResignStudent = 6,
+    };
 
     public enum BhikkuType { SangaUpasthayaka, AnusangaUpasthayaka, Upasampada, Samanera, all };
 
     public enum BhikkuPost { NAN = 0, SangaUpasthayaka = 1, AnusangaUpasthayaka = 2 };
+
+    public enum BhikkuChangeType
+    {
+        /// <summary>
+        /// Change as normal procedure
+        /// </summary>
+        Normal = 1,
+
+        /// <summary>
+        /// Chage on request by him self 
+        /// </summary>
+        onRequest = 2,
+
+        /// <summary>
+        /// Change on request of Sangha Upasthayaka thero
+        /// </summary>
+        OnSuSwRequest = 3
+    }
 
     public class Utility
     {

@@ -197,7 +197,7 @@ namespace MahamewnawaInfo.Classes
             statusPanel.BackColor = statusColor;
             this.closeButton.BackColor = this.minimizeButton.BackColor = captionPanel.BackColor = captionColor;
 
-            this.Size = new Size(maxNameLength + 300, 800);
+            this.Size = new Size(maxNameLength + 200, this.Parent.Height - 125);
 
             //printIcon.BackColor = captionPanel.BackColor;
         }
@@ -228,7 +228,7 @@ namespace MahamewnawaInfo.Classes
 
         private void minimizeButton_Click(object sender, EventArgs e)
         {
-            this.Location = new Point(0, minimizedAsapuwa.Location.Y + minimizedAsapuwa.Parent.Location.Y);
+            this.Location = new Point(100, 25); // minimizedAsapuwa.Location.Y + minimizedAsapuwa.Parent.Location.Y);
 
             //minimizedAsapuwa.Parent.Controls.Add(this);
 

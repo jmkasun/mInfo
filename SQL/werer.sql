@@ -1,0 +1,150 @@
+DELIMITER ;
+
+USE `mahamevnainfo`;
+DROP procedure IF EXISTS `Bikku_Add`;
+
+DELIMITER $$
+USE `mahamevnainfo`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Bikku_Add`(P_NIC varchar(10),p_SamaneraNumber varchar(10),p_PassportNumber varchar(20),p_PlaceOfBirth varchar(100),
+                        p_LayNameInFull varchar(100),p_DateOfBirth Date,p_NameOfFatherInFull varchar(100),p_DateOfRobing Date,
+                        p_NameAssumedAtRobing varchar(100),p_NameOfRobingTutor int,p_TempleRobing int,
+                        p_TempleOfResidence int,p_NameOfViharadhipathi int,p_IsUpasampanna bit,
+                        p_PlaceOfHigherOrdination int,p_DateOfHigherOrdination Date,
+                        p_NameOfUpadyaAtHigherOrdination int,p_IsUpadyaThero bit,
+                        p_Post int,p_District int,p_DateOfCame Date,p_ImageData LONGTEXT,
+                        p_HomeTP varchar(15),p_BloodGroup varchar(3),OUT p_ID int, p_HomeAddress varchar(200),
+                        
+                        p_Dharmadeshanaa bit,p_Vandanaa bit,p_Sajjayana bit,p_Sinhala bit,p_Tamil bit,p_English bit,p_Hindhi bit,
+                        p_OtheLanguage VARCHAR(100),p_UpasampadaNumber VARCHAR(45),p_UpasampadaRegDate DATE,p_KarmacharyaHimi1 INT,
+                        p_KarmacharyaHimi2 INT,p_KarmacharyaHimi3 INT,p_MahaNayakaHimidetails INT,p_AcharyaHimiDetails INT,
+                        p_UpadyaTheroName INT,p_Nikaya INT,P_UpasampadaMahaNayakaHimidetails INT,p_UpasampadaAcharyaHimiDetails INT,
+                        p_UpasampadaNikaya INT,p_country INT,p_number INT,p_currentStatus INT,p_currentStatusComment VARCHAR(1000)
+                        ,p_duplicateNumber bit,p_HomeTP2 VARCHAR(15))
+BEGIN
+
+
+IF p_duplicateNumber = true 
+THEN
+    
+    ALTER TABLE `mahamevnainfo`.`bikkuinfo` 
+    DROP INDEX `number_UNIQUE` ;
+    
+    UPDATE  BikkuInfo  SET number = number+1 WHERE number >= p_number ;
+    
+    
+      ALTER TABLE `mahamevnainfo`.`bikkuinfo`
+    ADD UNIQUE INDEX `number_UNIQUE` (`number` ASC) ;
+    
+END IF;
+
+
+    INSERT INTO BikkuInfo
+        (NIC,SamaneraNumber,PassportNumber,PlaceOfBirth,LayNameInFull,
+        DateOfBirth,NameOfFatherInFull,DateOfRobing,NameAssumedAtRobing,
+        NameOfRobingTutor,TempleRobing,TempleOfResidence,NameOfViharadhipathi,
+        IsUpasampanna,PlaceOfHigherOrdination,DateOfHigherOrdination,
+        NameOfUpadyaAtHigherOrdination,IsUpadyaThero,Post,
+        District,DateOfCame,ImageData,Deleted,HomeTP,BloodGroup,HomeAddress,
+        Dharmadeshanaa ,Vandanaa ,Sajjayana ,Sinhala ,Tamil ,English ,Hindhi ,
+        OtheLanguage ,UpasampadaNumber ,UpasampadaRegDate ,KarmacharyaHimi1 ,
+        KarmacharyaHimi2 ,KarmacharyaHimi3 ,MahaNayakaHimidetails ,AcharyaHimiDetails ,
+        UpadyaTheroName ,Nikaya,UpasampadaMahaNayakaHimidetails,UpasampadaAcharyaHimiDetails,
+        UpasampadaNikaya,country,number,currentStatus,currentStatusComment,HomeTP2)
+        
+    VALUES(P_NIC,p_SamaneraNumber,p_PassportNumber,p_PlaceOfBirth,
+    p_LayNameInFull,p_DateOfBirth,p_NameOfFatherInFull,p_DateOfRobing,
+    p_NameAssumedAtRobing,p_NameOfRobingTutor,p_TempleRobing,
+    p_TempleOfResidence,p_NameOfViharadhipathi,p_IsUpasampanna,
+    p_PlaceOfHigherOrdination,p_DateOfHigherOrdination,
+    p_NameOfUpadyaAtHigherOrdination,p_IsUpadyaThero,
+    p_Post,p_District,p_DateOfCame,p_ImageData,0,p_HomeTP,p_BloodGroup,p_HomeAddress,
+    p_Dharmadeshanaa ,p_Vandanaa ,p_Sajjayana ,p_Sinhala ,p_Tamil ,p_English ,p_Hindhi ,
+    p_OtheLanguage ,p_UpasampadaNumber ,p_UpasampadaRegDate ,p_KarmacharyaHimi1 ,
+    p_KarmacharyaHimi2 ,p_KarmacharyaHimi3 ,p_MahaNayakaHimidetails ,p_AcharyaHimiDetails ,
+    p_UpadyaTheroName ,p_Nikaya ,P_UpasampadaMahaNayakaHimidetails,p_UpasampadaAcharyaHimiDetails,
+    p_UpasampadaNikaya,p_country,p_number,p_currentStatus,p_currentStatusComment,p_HomeTP2
+    
+    );
+
+    SET p_ID = LAST_INSERT_ID();
+
+END$$
+
+DELIMITER ;
+
+
+USE `mahamevnainfo`;
+DROP procedure IF EXISTS `Bikku_Upd`;
+
+DELIMITER $$
+USE `mahamevnainfo`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Bikku_Upd`(P_NIC varchar(10),p_SamaneraNumber varchar(10),p_PassportNumber varchar(20),p_PlaceOfBirth varchar(100),
+                        p_LayNameInFull varchar(100),p_DateOfBirth Date,p_NameOfFatherInFull varchar(100),p_DateOfRobing Date,
+                        p_NameAssumedAtRobing varchar(100),p_NameOfRobingTutor int,p_TempleRobing int,
+                        p_TempleOfResidence int,p_NameOfViharadhipathi int,p_IsUpasampanna bit,
+                        p_PlaceOfHigherOrdination int,p_DateOfHigherOrdination Date,
+                        p_NameOfUpadyaAtHigherOrdination int,p_IsUpadyaThero bit,
+                        p_Post bit,p_District int,p_DateOfCame Date,p_ImageData LONGTEXT,
+                        p_HomeTP varchar(15),p_BloodGroup varchar(3),p_ID int, p_HomeAddress varchar(200),
+                        
+                        p_Dharmadeshanaa bit,p_Vandanaa bit,p_Sajjayana bit,p_Sinhala bit,p_Tamil bit,p_English bit,p_Hindhi bit,
+                        p_OtheLanguage VARCHAR(100),p_UpasampadaNumber VARCHAR(45),p_UpasampadaRegDate DATE,p_KarmacharyaHimi1 INT,
+                        p_KarmacharyaHimi2 INT,p_KarmacharyaHimi3 INT,p_MahaNayakaHimidetails INT,p_AcharyaHimiDetails INT,
+                        p_UpadyaTheroName INT,p_Nikaya INT,P_UpasampadaMahaNayakaHimidetails INT,p_UpasampadaAcharyaHimiDetails INT,
+                        p_UpasampadaNikaya INT,p_country INT,p_number INT,p_currentStatus INT,p_currentStatusComment VARCHAR(1000)
+                        ,p_duplicateNumber bit,p_HomeTP2 VARCHAR(15))
+BEGIN
+
+
+IF p_duplicateNumber = true 
+THEN
+    
+    ALTER TABLE `mahamevnainfo`.`bikkuinfo` 
+    DROP INDEX `number_UNIQUE` ;
+    
+    UPDATE  BikkuInfo  SET number = number+1 WHERE number >= p_number ;
+    
+    
+    ALTER TABLE `mahamevnainfo`.`bikkuinfo`
+    ADD UNIQUE INDEX `number_UNIQUE` (`number` ASC) ;
+    
+END IF;
+
+
+    UPDATE BikkuInfo 
+    SET NIC = p_NIC ,SamaneraNumber = p_SamaneraNumber,
+        PassportNumber = p_PassportNumber,
+        PlaceOfBirth = p_PlaceOfBirth,
+        LayNameInFull=p_LayNameInFull,DateOfBirth=p_DateOfBirth,
+        NameOfFatherInFull=p_NameOfFatherInFull,DateOfRobing=p_DateOfRobing,
+        NameAssumedAtRobing=p_NameAssumedAtRobing,
+        NameOfRobingTutor=p_NameOfRobingTutor,TempleRobing=p_TempleRobing,
+        TempleOfResidence=p_TempleOfResidence,
+        NameOfViharadhipathi=p_NameOfViharadhipathi,
+        IsUpasampanna=p_IsUpasampanna,
+        PlaceOfHigherOrdination=p_PlaceOfHigherOrdination,
+        DateOfHigherOrdination=p_DateOfHigherOrdination,
+        NameOfUpadyaAtHigherOrdination=p_NameOfUpadyaAtHigherOrdination,
+        IsUpadyaThero = p_IsUpadyaThero,        
+        District = p_District, DateOfCame = p_DateOfCame, 
+        ImageData = p_ImageData ,HomeTP = p_HomeTP,BloodGroup = p_BloodGroup,
+        HomeAddress = p_HomeAddress,Dharmadeshanaa = p_Dharmadeshanaa,Vandanaa = p_Vandanaa,
+        Sajjayana = p_Sajjayana,Sinhala = p_Sinhala,Tamil = p_Tamil,English = p_English,Hindhi = p_Hindhi,
+        OtheLanguage = p_OtheLanguage,UpasampadaNumber = p_UpasampadaNumber,UpasampadaRegDate = p_UpasampadaRegDate,
+        KarmacharyaHimi1 = p_KarmacharyaHimi1,KarmacharyaHimi2 = p_KarmacharyaHimi2,KarmacharyaHimi3 = p_KarmacharyaHimi3,
+        MahaNayakaHimidetails = p_MahaNayakaHimidetails,AcharyaHimiDetails = p_AcharyaHimiDetails,
+        UpadyaTheroName = p_UpadyaTheroName,Nikaya = p_Nikaya,
+        
+        UpasampadaMahaNayakaHimidetails = P_UpasampadaMahaNayakaHimidetails,UpasampadaAcharyaHimiDetails = p_UpasampadaAcharyaHimiDetails,
+        UpasampadaNikaya = p_UpasampadaNikaya, country = p_country,number = p_number,
+        currentStatus = p_currentStatus,currentStatusComment = p_currentStatusComment,
+        HomeTP2 = p_HomeTP2
+       
+        
+    WHERE ID = p_ID;
+
+
+
+END$$
+
+DELIMITER ;

@@ -94,7 +94,7 @@
             this.asapuwaListPanel.Controls.Add(this.showAllAsapuwa);
             this.asapuwaListPanel.Location = new System.Drawing.Point(0, 0);
             this.asapuwaListPanel.Name = "asapuwaListPanel";
-            this.asapuwaListPanel.Size = new System.Drawing.Size(823, 806);
+            this.asapuwaListPanel.Size = new System.Drawing.Size(823, 713);
             this.asapuwaListPanel.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.asapuwaListPanel.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.asapuwaListPanel.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -317,7 +317,7 @@
             this.showAllAsapuwa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.showAllAsapuwa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.showAllAsapuwa.Image = global::MahamewnawaInfo.Properties.Resources.left_show_hide1;
-            this.showAllAsapuwa.Location = new System.Drawing.Point(805, 3);
+            this.showAllAsapuwa.Location = new System.Drawing.Point(802, 3);
             this.showAllAsapuwa.Name = "showAllAsapuwa";
             this.showAllAsapuwa.Size = new System.Drawing.Size(15, 18);
             this.showAllAsapuwa.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -376,7 +376,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.upasampadaountLb);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Panel2.Controls.Add(this.asapuwaListPanel);
-            this.splitContainer1.Size = new System.Drawing.Size(1156, 842);
+            this.splitContainer1.Size = new System.Drawing.Size(1156, 749);
             this.splitContainer1.SplitterDistance = 329;
             this.splitContainer1.TabIndex = 5;
             // 
@@ -391,7 +391,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tabControl1.SelectedTabIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(323, 803);
+            this.tabControl1.Size = new System.Drawing.Size(323, 710);
             this.tabControl1.TabIndex = 37;
             this.tabControl1.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabControl1.Text = "tabControl1";
@@ -424,7 +424,7 @@
             this.finalizeBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.finalizeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.finalizeBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.finalizeBtn.Location = new System.Drawing.Point(617, 811);
+            this.finalizeBtn.Location = new System.Drawing.Point(617, 718);
             this.finalizeBtn.Name = "finalizeBtn";
             this.finalizeBtn.Size = new System.Drawing.Size(65, 23);
             this.finalizeBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -440,7 +440,7 @@
             this.saveHistrybtn.Enabled = false;
             this.saveHistrybtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveHistrybtn.ForeColor = System.Drawing.Color.Maroon;
-            this.saveHistrybtn.Location = new System.Drawing.Point(755, 811);
+            this.saveHistrybtn.Location = new System.Drawing.Point(755, 718);
             this.saveHistrybtn.Name = "saveHistrybtn";
             this.saveHistrybtn.Size = new System.Drawing.Size(65, 23);
             this.saveHistrybtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -453,7 +453,7 @@
             this.reportBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.reportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.reportBtn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.reportBtn.Location = new System.Drawing.Point(686, 811);
+            this.reportBtn.Location = new System.Drawing.Point(686, 718);
             this.reportBtn.Name = "reportBtn";
             this.reportBtn.Size = new System.Drawing.Size(65, 23);
             this.reportBtn.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -466,7 +466,7 @@
             this.samaneraRemainCountLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.samaneraRemainCountLbl.AutoSize = true;
             this.samaneraRemainCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.samaneraRemainCountLbl.Location = new System.Drawing.Point(465, 824);
+            this.samaneraRemainCountLbl.Location = new System.Drawing.Point(465, 731);
             this.samaneraRemainCountLbl.Name = "samaneraRemainCountLbl";
             this.samaneraRemainCountLbl.Size = new System.Drawing.Size(0, 16);
             this.samaneraRemainCountLbl.TabIndex = 6;
@@ -476,7 +476,7 @@
             this.upasampadaRemainCountLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.upasampadaRemainCountLbl.AutoSize = true;
             this.upasampadaRemainCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upasampadaRemainCountLbl.Location = new System.Drawing.Point(465, 807);
+            this.upasampadaRemainCountLbl.Location = new System.Drawing.Point(465, 714);
             this.upasampadaRemainCountLbl.Name = "upasampadaRemainCountLbl";
             this.upasampadaRemainCountLbl.Size = new System.Drawing.Size(0, 16);
             this.upasampadaRemainCountLbl.TabIndex = 5;
@@ -486,7 +486,7 @@
             this.samaneraChangeCountLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.samaneraChangeCountLbl.AutoSize = true;
             this.samaneraChangeCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.samaneraChangeCountLbl.Location = new System.Drawing.Point(348, 824);
+            this.samaneraChangeCountLbl.Location = new System.Drawing.Point(348, 731);
             this.samaneraChangeCountLbl.Name = "samaneraChangeCountLbl";
             this.samaneraChangeCountLbl.Size = new System.Drawing.Size(0, 16);
             this.samaneraChangeCountLbl.TabIndex = 6;
@@ -496,7 +496,7 @@
             this.upasampadaChangeCountLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.upasampadaChangeCountLbl.AutoSize = true;
             this.upasampadaChangeCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upasampadaChangeCountLbl.Location = new System.Drawing.Point(348, 807);
+            this.upasampadaChangeCountLbl.Location = new System.Drawing.Point(348, 714);
             this.upasampadaChangeCountLbl.Name = "upasampadaChangeCountLbl";
             this.upasampadaChangeCountLbl.Size = new System.Drawing.Size(0, 16);
             this.upasampadaChangeCountLbl.TabIndex = 5;
@@ -506,7 +506,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1, 824);
+            this.label6.Location = new System.Drawing.Point(1, 731);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(166, 16);
             this.label6.TabIndex = 4;
@@ -517,7 +517,7 @@
             this.samaneraCountLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.samaneraCountLbl.AutoSize = true;
             this.samaneraCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.samaneraCountLbl.Location = new System.Drawing.Point(180, 824);
+            this.samaneraCountLbl.Location = new System.Drawing.Point(180, 731);
             this.samaneraCountLbl.Name = "samaneraCountLbl";
             this.samaneraCountLbl.Size = new System.Drawing.Size(0, 16);
             this.samaneraCountLbl.TabIndex = 3;
@@ -527,7 +527,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(385, 814);
+            this.label8.Location = new System.Drawing.Point(385, 721);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 16);
             this.label8.TabIndex = 3;
@@ -538,7 +538,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(223, 814);
+            this.label7.Location = new System.Drawing.Point(223, 721);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 16);
             this.label7.TabIndex = 3;
@@ -549,7 +549,7 @@
             this.upasampadaountLb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.upasampadaountLb.AutoSize = true;
             this.upasampadaountLb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upasampadaountLb.Location = new System.Drawing.Point(180, 807);
+            this.upasampadaountLb.Location = new System.Drawing.Point(180, 714);
             this.upasampadaountLb.Name = "upasampadaountLb";
             this.upasampadaountLb.Size = new System.Drawing.Size(0, 16);
             this.upasampadaountLb.TabIndex = 3;
@@ -559,7 +559,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1, 806);
+            this.label5.Location = new System.Drawing.Point(1, 713);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(167, 16);
             this.label5.TabIndex = 3;
@@ -590,7 +590,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 842);
+            this.ClientSize = new System.Drawing.Size(1156, 749);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

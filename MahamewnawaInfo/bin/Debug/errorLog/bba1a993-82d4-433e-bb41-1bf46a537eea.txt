@@ -1,0 +1,15 @@
+Object reference not set to an instance of an object.	   at MahamewnawaInfo.Classes.ChangeListItemBhikku.DoDrag(ChangeListItemAsapuwa asapuwa) in D:\Projects Kasun\mInfo\MahamewnawaInfo\Classes\Bhikku\ChangeListItemBhikku.cs:line 268
+   at MahamewnawaInfo.Classes.ChangeListItemAsapuwa.AddBhikku(ChangeListItemBhikku lbl) in D:\Projects Kasun\mInfo\MahamewnawaInfo\Classes\Asapuwa\ChangeListItemAsapuwa.cs:line 296
+   at MahamewnawaInfo.Forms.frmChangeList.LoadForm(ChangeList changeList, List`1 list) in D:\Projects Kasun\mInfo\MahamewnawaInfo\Forms\ChangeLst\frmChangeList.cs:line 499
+   at MahamewnawaInfo.Forms.frmChangelistParams.LoadChangeHistry(ChangeList changeList) in D:\Projects Kasun\mInfo\MahamewnawaInfo\Forms\ChangeLst\frmChangelistParams.cs:line 126
+   at MahamewnawaInfo.Forms.frmChangelistParams.lbl_MouseDoubleClick(Object sender, MouseEventArgs e) in D:\Projects Kasun\mInfo\MahamewnawaInfo\Forms\ChangeLst\frmChangelistParams.cs:line 115
+   at System.Windows.Forms.Control.OnMouseDoubleClick(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.Label.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at MahamewnawaInfo.Program.Main() in D:\Projects Kasun\mInfo\MahamewnawaInfo\Program.cs:line 22	----------------------------------------------------	

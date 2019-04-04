@@ -133,6 +133,7 @@ namespace DBCore.Common
             return reader;
         }
 
+
         protected DataTable GetTable(string SQL)
         {
             DataTable data = new DataTable();

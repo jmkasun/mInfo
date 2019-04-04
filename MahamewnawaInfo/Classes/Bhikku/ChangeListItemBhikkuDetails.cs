@@ -89,14 +89,14 @@ namespace MahamewnawaInfo.Classes
 
             Control.Add(this);
 
-            if (location.Y + this.Height > this.TopLevelControl.Height)
-            {
-                this.Location = new Point(location.X, this.TopLevelControl.Height - this.Height);
-            }
-            else
-            {
-                this.Location = location;
-            }
+            //if (location.Y + this.Height > this.TopLevelControl.Height)
+            //{
+            //    this.Location = new Point(location.X, 250);
+            //}
+            //else
+            //{
+                this.Location = new Point(location.X-50, 150);
+            //}
 
             this.BringToFront();
 
@@ -357,9 +357,9 @@ namespace MahamewnawaInfo.Classes
             // 
             this.histryHrid.AllowUserToDeleteRows = false;
             this.histryHrid.AllowUserToOrderColumns = true;
-            this.histryHrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.histryHrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -378,7 +378,7 @@ namespace MahamewnawaInfo.Classes
             this.histryHrid.Location = new System.Drawing.Point(0, 0);
             this.histryHrid.Name = "histryHrid";
             this.histryHrid.RowHeadersVisible = false;
-            this.histryHrid.Size = new System.Drawing.Size(545, 205);
+            this.histryHrid.Size = new System.Drawing.Size(540, 200);
             this.histryHrid.TabIndex = 0;
             // 
             // namhe
@@ -414,8 +414,8 @@ namespace MahamewnawaInfo.Classes
             // 
             // captionPanel
             // 
-            this.captionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.captionPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.captionPanel.BackColor = System.Drawing.Color.SkyBlue;
             this.captionPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.captionPanel.Cursor = System.Windows.Forms.Cursors.SizeAll;
@@ -452,9 +452,9 @@ namespace MahamewnawaInfo.Classes
             // 
             this.activityGrid.AllowUserToDeleteRows = false;
             this.activityGrid.AllowUserToOrderColumns = true;
-            this.activityGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.activityGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

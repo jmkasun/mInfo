@@ -99,7 +99,7 @@ namespace DBCore.Classes
                     lb.BhikkuID = reader.GetInt32(1);
                     lb.AsapuwaID = reader.GetInt32(2);
                     lb.Post = (BhikkuPost)reader.GetInt32(3);
-
+                    lb.ChangeType = (BhikkuChangeType)reader.GetInt32(4);
                     list.Add(lb);
                 }
             }
@@ -125,7 +125,7 @@ namespace DBCore.Classes
 
         #endregion
 
-        public int AddBhikkuAsapuwa(int ChangeListID, int asapuwaID, int bhikkuID, BhikkuPost Post)
+        public int AddBhikkuAsapuwa(int ChangeListID, int asapuwaID, int bhikkuID, BhikkuPost Post,BhikkuChangeType changeType)
         {
             ClearParameters();
 
@@ -133,6 +133,7 @@ namespace DBCore.Classes
             AddParameter("@p_BhikkuID", bhikkuID);
             AddParameter("@p_AsapuwaID", asapuwaID);
             AddParameter("@p_Post", (int)Post);
+            AddParameter("@p_ChangeType", (int)changeType);
 
             AddParameter("@p_ID", MySqlDbType.Int32);
 
@@ -141,12 +142,13 @@ namespace DBCore.Classes
             return (int)GetOutputValue("@p_ID");
         }
 
-        public void UpdateBhikkuAsapuwa(int bhikkuChangeListID, BhikkuPost Post)
+        public void UpdateBhikkuAsapuwa(int bhikkuChangeListID, BhikkuPost Post, BhikkuChangeType changeType)
         {
             ClearParameters();
 
             AddParameter("@p_ID", bhikkuChangeListID);
             AddParameter("@p_Post", (int)Post);
+            AddParameter("@p_ChangeType", (int)changeType);
 
             ExecuteNonQueryOutput("ChangeListBhikku_Upd");
         }
@@ -198,5 +200,6 @@ namespace DBCore.Classes
         public int AsapuwaID;
         public int BhikkuID;
         public BhikkuPost Post;
+        public BhikkuChangeType ChangeType;
     }
 }

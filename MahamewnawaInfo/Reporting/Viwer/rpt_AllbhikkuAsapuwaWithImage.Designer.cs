@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rpt_AllbhikkuAsapuwaWithImage));
             this.bhikkuReportNameIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mahamevnainfoDataSet = new MahamewnawaInfo.mahamevnainfoDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -66,6 +67,7 @@
             this.ClientSize = new System.Drawing.Size(1354, 749);
             this.Controls.Add(this.reportViewer1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rpt_AllbhikkuAsapuwaWithImage";
             this.Text = "rptNameIDReport";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

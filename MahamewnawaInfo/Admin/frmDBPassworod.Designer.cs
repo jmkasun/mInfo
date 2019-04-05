@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDBPassworod));
             this.pwdText = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOk = new DevComponents.DotNetBar.ButtonX();
@@ -113,6 +114,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOk);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDBPassworod";
             this.Text = "Database Passworod";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

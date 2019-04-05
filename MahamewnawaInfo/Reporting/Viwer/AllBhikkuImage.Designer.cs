@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllBhikkuImage));
             this.changeListReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mahamevnainfoDataSet = new MahamewnawaInfo.mahamevnainfoDataSet();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -200,9 +201,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.DocumentMapWidth = 8;
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.changeListReportBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource3.Name = "DataSet1";
+            reportDataSource3.Value = this.changeListReportBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "MahamewnawaInfo.Reporting.Reports.AllBhikkuWithImage.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 50);
             this.reportViewer1.Name = "reportViewer1";
@@ -218,6 +219,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.reportViewer1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AllBhikkuImage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AllBhikkuImage_Load);

@@ -35,4 +35,3 @@ D:\Projects Kasun\mInfo\DBCore\obj\Debug\DBCore.dll
 D:\Projects Kasun\mInfo\DBCore\obj\Debug\DBCore.pdb
 D:\Projects Kasun\mInfo\DBCore\bin\Debug\Google.Protobuf.dll
 D:\Projects Kasun\mInfo\DBCore\bin\Debug\MySql.Data.xml
-D:\Projects Kasun\mInfo\DBCore\obj\Debug\DBCore.csprojResolveAssemblyReference.cache

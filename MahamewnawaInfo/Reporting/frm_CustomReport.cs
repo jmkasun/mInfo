@@ -196,6 +196,12 @@ namespace MahamewnawaInfo.Reporting
                         return;
                     }
 
+                case "-------- N/A --------":
+                    {
+                       
+                        return;
+                    }
+
                 default:
                     {
                         if (combo == comboBox1)

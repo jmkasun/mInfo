@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptBhikkuReport));
             this.bhikkuReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mahamevnainfoDataSet = new MahamewnawaInfo.mahamevnainfoDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -107,6 +108,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reportViewer1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rptBhikkuReport";
             this.Text = "rptBhikkuReport";
             this.Load += new System.EventHandler(this.rptBhikkuReport_Load);

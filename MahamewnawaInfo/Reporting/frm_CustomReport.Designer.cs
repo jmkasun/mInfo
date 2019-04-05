@@ -42,6 +42,7 @@
             this.filter2Todate = new System.Windows.Forms.DateTimePicker();
             this.filter1Combo = new System.Windows.Forms.ComboBox();
             this.filter2Combo = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -49,11 +50,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(1, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 71);
+            this.panel1.Size = new System.Drawing.Size(1002, 71);
             this.panel1.TabIndex = 0;
             // 
             // groupBox1
@@ -66,7 +68,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(5, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(477, 65);
+            this.groupBox1.Size = new System.Drawing.Size(461, 65);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter 1";
@@ -79,9 +81,9 @@
             this.groupBox2.Controls.Add(this.filter2Combo);
             this.groupBox2.Controls.Add(this.filter2text);
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(488, 0);
+            this.groupBox2.Location = new System.Drawing.Point(468, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(477, 65);
+            this.groupBox2.Size = new System.Drawing.Size(461, 65);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filter 2";
@@ -106,9 +108,9 @@
             "භාෂා හැකියාවන්",
             "හැකියාවන්",
             "වර්තමානයේ ..."});
-            this.comboBox1.Location = new System.Drawing.Point(5, 17);
+            this.comboBox1.Location = new System.Drawing.Point(3, 17);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(179, 21);
+            this.comboBox1.Size = new System.Drawing.Size(166, 21);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -134,13 +136,13 @@
             "වර්තමානයේ ..."});
             this.comboBox2.Location = new System.Drawing.Point(6, 17);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(179, 21);
+            this.comboBox2.Size = new System.Drawing.Size(166, 21);
             this.comboBox2.TabIndex = 0;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // filter1Text
             // 
-            this.filter1Text.Location = new System.Drawing.Point(192, 17);
+            this.filter1Text.Location = new System.Drawing.Point(173, 17);
             this.filter1Text.Name = "filter1Text";
             this.filter1Text.Size = new System.Drawing.Size(282, 21);
             this.filter1Text.TabIndex = 1;
@@ -148,7 +150,7 @@
             // 
             // filter2text
             // 
-            this.filter2text.Location = new System.Drawing.Point(191, 17);
+            this.filter2text.Location = new System.Drawing.Point(175, 17);
             this.filter2text.Name = "filter2text";
             this.filter2text.Size = new System.Drawing.Size(282, 21);
             this.filter2text.TabIndex = 1;
@@ -156,7 +158,7 @@
             // 
             // filter1FromDate
             // 
-            this.filter1FromDate.Location = new System.Drawing.Point(192, 17);
+            this.filter1FromDate.Location = new System.Drawing.Point(173, 17);
             this.filter1FromDate.Name = "filter1FromDate";
             this.filter1FromDate.Size = new System.Drawing.Size(200, 21);
             this.filter1FromDate.TabIndex = 2;
@@ -164,7 +166,7 @@
             // 
             // filter1ToDate
             // 
-            this.filter1ToDate.Location = new System.Drawing.Point(192, 41);
+            this.filter1ToDate.Location = new System.Drawing.Point(173, 41);
             this.filter1ToDate.Name = "filter1ToDate";
             this.filter1ToDate.Size = new System.Drawing.Size(200, 21);
             this.filter1ToDate.TabIndex = 2;
@@ -172,7 +174,7 @@
             // 
             // filter2FromDate
             // 
-            this.filter2FromDate.Location = new System.Drawing.Point(191, 17);
+            this.filter2FromDate.Location = new System.Drawing.Point(175, 17);
             this.filter2FromDate.Name = "filter2FromDate";
             this.filter2FromDate.Size = new System.Drawing.Size(200, 21);
             this.filter2FromDate.TabIndex = 2;
@@ -180,7 +182,7 @@
             // 
             // filter2Todate
             // 
-            this.filter2Todate.Location = new System.Drawing.Point(191, 41);
+            this.filter2Todate.Location = new System.Drawing.Point(175, 41);
             this.filter2Todate.Name = "filter2Todate";
             this.filter2Todate.Size = new System.Drawing.Size(200, 21);
             this.filter2Todate.TabIndex = 2;
@@ -190,7 +192,7 @@
             // 
             this.filter1Combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.filter1Combo.FormattingEnabled = true;
-            this.filter1Combo.Location = new System.Drawing.Point(192, 17);
+            this.filter1Combo.Location = new System.Drawing.Point(173, 17);
             this.filter1Combo.Name = "filter1Combo";
             this.filter1Combo.Size = new System.Drawing.Size(282, 21);
             this.filter1Combo.TabIndex = 0;
@@ -200,21 +202,31 @@
             // 
             this.filter2Combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.filter2Combo.FormattingEnabled = true;
-            this.filter2Combo.Location = new System.Drawing.Point(191, 17);
+            this.filter2Combo.Location = new System.Drawing.Point(175, 17);
             this.filter2Combo.Name = "filter2Combo";
             this.filter2Combo.Size = new System.Drawing.Size(282, 21);
             this.filter2Combo.TabIndex = 0;
             this.filter2Combo.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(935, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(58, 53);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Load";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frm_CustomReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 482);
+            this.ClientSize = new System.Drawing.Size(1354, 749);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_CustomReport";
             this.Text = "Report";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -239,5 +251,6 @@
         private System.Windows.Forms.TextBox filter1Text;
         private System.Windows.Forms.ComboBox filter2Combo;
         private System.Windows.Forms.ComboBox filter1Combo;
+        private System.Windows.Forms.Button button1;
     }
 }

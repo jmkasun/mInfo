@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptBhikkuStatus));
             this.bhikkuReportNameIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mahamevnainfoDataSet = new MahamewnawaInfo.mahamevnainfoDataSet();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -175,13 +176,13 @@
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.bhikkuReportNameIDBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.bhikkuReportNameIDBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "MahamewnawaInfo.Reporting.Reports.BhikkuInfoNameID.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 72);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1354, 793);
+            this.reportViewer1.Size = new System.Drawing.Size(1354, 677);
             this.reportViewer1.TabIndex = 0;
             // 
             // reportViewer2
@@ -195,11 +196,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 865);
+            this.ClientSize = new System.Drawing.Size(1354, 749);
             this.Controls.Add(this.showbtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.reportViewer1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rptBhikkuStatus";
             this.Text = "rptNameIDReport";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

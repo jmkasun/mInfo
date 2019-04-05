@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportViwer));
             this.reportParamPanel = new DevComponents.DotNetBar.PanelEx();
             this.reportViwerPanel = new DevComponents.DotNetBar.PanelEx();
             this.SuspendLayout();
             // 
             // reportParamPanel
             // 
-            this.reportParamPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.reportParamPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.reportParamPanel.CanvasColor = System.Drawing.SystemColors.Control;
             this.reportParamPanel.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.reportParamPanel.Location = new System.Drawing.Point(2, 2);
@@ -53,9 +54,9 @@
             // 
             // reportViwerPanel
             // 
-            this.reportViwerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.reportViwerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViwerPanel.CanvasColor = System.Drawing.SystemColors.Control;
             this.reportViwerPanel.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.reportViwerPanel.Location = new System.Drawing.Point(197, 2);
@@ -78,6 +79,8 @@
             this.ClientSize = new System.Drawing.Size(779, 530);
             this.Controls.Add(this.reportViwerPanel);
             this.Controls.Add(this.reportParamPanel);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReportViwer";
             this.Text = "ReportViwer";
             this.ResumeLayout(false);

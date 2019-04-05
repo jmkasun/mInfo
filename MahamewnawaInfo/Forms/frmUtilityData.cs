@@ -191,10 +191,10 @@ namespace MahamewnawaInfo.Forms
             setUserPermissions();
         }
 
-        public void ShowForm(int nameID,string labelName)
+        public void ShowForm(DBCore.UtilityDataName type, string labelName)
         {
             label2.Text = labelName.Replace("\n", "").Replace("\r", " ");
-            NameID = nameID;
+            NameID = (int)type;
             this.ShowDialog();
         }
     }

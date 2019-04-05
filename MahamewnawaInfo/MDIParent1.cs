@@ -14,6 +14,7 @@ using MahamewnawaInfo.Forms;
 using MahamewnawaInfo.Reporting.Viwer;
 using MahamewnawaInfo.Admin;
 using DBCore;
+using MahamewnawaInfo.Reporting;
 
 namespace MahamewnawaInfo
 {
@@ -34,6 +35,7 @@ namespace MahamewnawaInfo
         private Form rptAllBhikkuaspImg;
         private Form rptAllBhikkuImg;
         private Form rptSanghaUpasthayaka;
+        private Form rptCustomReport;
 
 
         public MDIParent1()
@@ -546,6 +548,26 @@ namespace MahamewnawaInfo
                 else
                 {
                     rptAllBhikkuaspImg.Activate();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void customReportButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (rptCustomReport == null || rptCustomReport.MdiParent == null)
+                {
+                    rptCustomReport = new frm_CustomReport();
+                    ViewChildForm(rptCustomReport);
+                }
+                else
+                {
+                    rptCustomReport.Activate();
                 }
             }
             catch (Exception ex)

@@ -210,6 +210,12 @@
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\frm_CustomReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporting\frm_CustomReport.Designer.cs">
+      <DependentUpon>frm_CustomReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\Viwer\AllBhikkuImage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +361,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reporting\frm_CustomReport.resx">
+      <DependentUpon>frm_CustomReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporting\Reports\AllBhikkuWithImage.rdlc" />
     <EmbeddedResource Include="Reporting\Reports\AsapuBhikkuWithOutImage.rdlc" />
     <EmbeddedResource Include="Reporting\Reports\BhikkuInfi.rdlc" />

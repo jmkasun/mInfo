@@ -260,7 +260,7 @@ namespace MahamewnawaInfo.Forms
         private void buttonX13_Click(object sender, EventArgs e)
         {
             frmUtilityData ut = new frmUtilityData((int)userLevel);
-            ut.ShowForm((int)DBCore.UtilityDataName.Country, "Country");
+            ut.ShowForm(DBCore.UtilityDataName.Country, "Country");
           //  UpdateUtility((int)DBCore.UtilityDataName.Country, countryCombo);
         }
 
@@ -268,7 +268,7 @@ namespace MahamewnawaInfo.Forms
         {
             using (UtilityData ut = new UtilityData(true))
             {
-                ut.BindToCombo(countryCombo, (int)DBCore.UtilityDataName.Country);
+                ut.BindToCombo(countryCombo, DBCore.UtilityDataName.Country);
             }
 
             countryCombo.SelectedIndex = 0;

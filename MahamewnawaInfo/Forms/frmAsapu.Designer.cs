@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAsapu));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.numberOfKutiTxt = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.postalcodeTextbox = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,13 +56,10 @@
             this.cancelbtn = new DevComponents.DotNetBar.ButtonX();
             this.findButton = new DevComponents.DotNetBar.ButtonX();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.numberOfKutiTxt = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numberOfKutiTxt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateOfOpenDtm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numberOfKutiTxt)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel1
@@ -119,6 +120,14 @@
             this.groupPanel1.StyleMouseOver.Class = "";
             this.groupPanel1.TabIndex = 0;
             // 
+            // numberOfKutiTxt
+            // 
+            this.numberOfKutiTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberOfKutiTxt.Location = new System.Drawing.Point(154, 368);
+            this.numberOfKutiTxt.Name = "numberOfKutiTxt";
+            this.numberOfKutiTxt.Size = new System.Drawing.Size(75, 26);
+            this.numberOfKutiTxt.TabIndex = 112;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -141,6 +150,29 @@
             this.postalcodeTextbox.Name = "postalcodeTextbox";
             this.postalcodeTextbox.Size = new System.Drawing.Size(145, 26);
             this.postalcodeTextbox.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label9.Location = new System.Drawing.Point(235, 374);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(215, 12);
+            this.label9.TabIndex = 109;
+            this.label9.Text = "(වැඩසිටිය හැකි ස්වාමින්වහන්සේලා ගණන)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(9, 368);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 20);
+            this.label8.TabIndex = 109;
+            this.label8.Text = "කුටි ගණන";
             // 
             // label5
             // 
@@ -401,37 +433,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(9, 368);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 20);
-            this.label8.TabIndex = 109;
-            this.label8.Text = "කුටි ගණන";
-            // 
-            // numberOfKutiTxt
-            // 
-            this.numberOfKutiTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberOfKutiTxt.Location = new System.Drawing.Point(154, 368);
-            this.numberOfKutiTxt.Name = "numberOfKutiTxt";
-            this.numberOfKutiTxt.Size = new System.Drawing.Size(75, 26);
-            this.numberOfKutiTxt.TabIndex = 112;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label9.Location = new System.Drawing.Point(235, 374);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(215, 12);
-            this.label9.TabIndex = 109;
-            this.label9.Text = "(වැඩසිටිය හැකි ස්වාමින්වහන්සේලා ගණන)";
-            // 
             // frmAsapu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,14 +444,15 @@
             this.Controls.Add(this.cancelbtn);
             this.Controls.Add(this.groupPanel1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAsapu";
             this.Text = "Mahamevnawa:Asapuwa";
             this.Load += new System.EventHandler(this.frmAsapu_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numberOfKutiTxt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateOfOpenDtm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numberOfKutiTxt)).EndInit();
             this.ResumeLayout(false);
 
         }

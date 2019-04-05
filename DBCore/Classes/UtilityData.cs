@@ -96,9 +96,9 @@ namespace DBCore.Classes
         }
 
 
-        public void BindToCombo(ComboBox combo, int _nameID)
+        public void BindToCombo(ComboBox combo, DBCore.UtilityDataName type)
         {
-            DataTable tbl = SelectAll(_nameID);
+            DataTable tbl = SelectAll((int)type);
 
             combo.DataSource = tbl;
 

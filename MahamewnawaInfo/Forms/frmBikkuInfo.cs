@@ -1301,8 +1301,8 @@ namespace MahamewnawaInfo.Forms
         private void buttonX5_Click(object sender, EventArgs e)
         {
             frmUtilityData ut = new frmUtilityData((int)userLevel);
-            ut.ShowForm((int)DBCore.UtilityDataName.MahanayakaHimi, label2.Text);
-            UpdateUtility((int)DBCore.UtilityDataName.MahanayakaHimi, mahanayakaHimiCombo);
+            ut.ShowForm(DBCore.UtilityDataName.MahanayakaHimi, label2.Text);
+            UpdateUtility(DBCore.UtilityDataName.MahanayakaHimi, mahanayakaHimiCombo);
 
             upasampadaMahanayakaHimiCombo.DataSource = mahanayakaHimiCombo.DataSource;
             setUtilityDataComboProperty(upasampadaMahanayakaHimiCombo);
@@ -1313,17 +1313,17 @@ namespace MahamewnawaInfo.Forms
         {
             using (UtilityData ut = new UtilityData(true))
             {
-                ut.BindToCombo(mahanayakaHimiCombo, (int)DBCore.UtilityDataName.MahanayakaHimi);
+                ut.BindToCombo(mahanayakaHimiCombo, DBCore.UtilityDataName.MahanayakaHimi);
                 mahanayakaHimiCombo.SelectedIndex = 0;
                 upasampadaMahanayakaHimiCombo.DataSource = mahanayakaHimiCombo.DataSource;
                 setUtilityDataComboProperty(upasampadaMahanayakaHimiCombo);
 
-                ut.BindToCombo(acharyaHimiCombo, (int)DBCore.UtilityDataName.acharyaHimi);
+                ut.BindToCombo(acharyaHimiCombo, DBCore.UtilityDataName.acharyaHimi);
                 acharyaHimiCombo.SelectedIndex = 0;
                 upasampadaAcharyaHimiCombo.DataSource = acharyaHimiCombo.DataSource;
                 setUtilityDataComboProperty(upasampadaAcharyaHimiCombo);
 
-                ut.BindToCombo(nikayaHimiCombo, (int)DBCore.UtilityDataName.Nikaya);
+                ut.BindToCombo(nikayaHimiCombo, DBCore.UtilityDataName.Nikaya);
                 nikayaHimiCombo.SelectedIndex = 0;
                 upasampadaNikayaCombo.DataSource = nikayaHimiCombo.DataSource;
                 setUtilityDataComboProperty(upasampadaNikayaCombo);
@@ -1333,19 +1333,19 @@ namespace MahamewnawaInfo.Forms
                 //upasampadaNikayaCombo.DataSource = nikayaHimiCombo.DataSource;
                 //setUtilityDataComboProperty(upasampadaNikayaCombo);
 
-                ut.BindToCombo(upadyaHimiCombo, (int)DBCore.UtilityDataName.UpadyaHimi);
+                ut.BindToCombo(upadyaHimiCombo, DBCore.UtilityDataName.UpadyaHimi);
                 upadyaHimiCombo.SelectedIndex = 0;
 
-                ut.BindToCombo(otherLangCombo, (int)DBCore.UtilityDataName.OtherLang);
+                ut.BindToCombo(otherLangCombo, DBCore.UtilityDataName.OtherLang);
                 otherLangCombo.SelectedIndex = -1;
 
-                ut.BindToCombo(upasampannaPlaceComboBoxEx, (int)DBCore.UtilityDataName.PlaceUpasampada);
+                ut.BindToCombo(upasampannaPlaceComboBoxEx, DBCore.UtilityDataName.PlaceUpasampada);
                 upasampannaPlaceComboBoxEx.SelectedIndex = -1;
 
-                ut.BindToCombo(templaRobingTookCombo, (int)DBCore.UtilityDataName.placeRobing);
+                ut.BindToCombo(templaRobingTookCombo, DBCore.UtilityDataName.placeRobing);
                 templaRobingTookCombo.SelectedIndex = -1;
 
-                ut.BindToCombo(countryCombo, (int)DBCore.UtilityDataName.Country);
+                ut.BindToCombo(countryCombo, DBCore.UtilityDataName.Country);
                 countryCombo.SelectedIndex = 0;
             }
         }
@@ -1358,19 +1358,19 @@ namespace MahamewnawaInfo.Forms
             combo.SelectedIndex = 0;
         }
 
-        private void UpdateUtility(int nameID, ComboBox combo)
+        private void UpdateUtility(DBCore.UtilityDataName type, ComboBox combo)
         {
             using (UtilityData ut = new UtilityData(true))
             {
-                ut.BindToCombo(combo, nameID);
+                ut.BindToCombo(combo, type);
             }
         }
 
         private void buttonX4_Click(object sender, EventArgs e)
         {
             frmUtilityData ut = new frmUtilityData((int)userLevel);
-            ut.ShowForm((int)DBCore.UtilityDataName.acharyaHimi, label21.Text);
-            UpdateUtility((int)DBCore.UtilityDataName.acharyaHimi, acharyaHimiCombo);
+            ut.ShowForm(DBCore.UtilityDataName.acharyaHimi, label21.Text);
+            UpdateUtility(DBCore.UtilityDataName.acharyaHimi, acharyaHimiCombo);
 
             upasampadaAcharyaHimiCombo.DataSource = acharyaHimiCombo.DataSource;
             setUtilityDataComboProperty(upasampadaAcharyaHimiCombo);
@@ -1379,8 +1379,8 @@ namespace MahamewnawaInfo.Forms
         private void buttonX3_Click(object sender, EventArgs e)
         {
             frmUtilityData ut = new frmUtilityData((int)userLevel);
-            ut.ShowForm((int)DBCore.UtilityDataName.Nikaya, label3.Text);
-            UpdateUtility((int)DBCore.UtilityDataName.Nikaya, nikayaHimiCombo);
+            ut.ShowForm(DBCore.UtilityDataName.Nikaya, label3.Text);
+            UpdateUtility(DBCore.UtilityDataName.Nikaya, nikayaHimiCombo);
 
             upasampadaNikayaCombo.DataSource = nikayaHimiCombo.DataSource;
             setUtilityDataComboProperty(upasampadaNikayaCombo);
@@ -1404,8 +1404,8 @@ namespace MahamewnawaInfo.Forms
         private void buttonX6_Click(object sender, EventArgs e)
         {
             frmUtilityData ut = new frmUtilityData((int)userLevel);
-            ut.ShowForm((int)DBCore.UtilityDataName.UpadyaHimi, label39.Text);
-            UpdateUtility((int)DBCore.UtilityDataName.UpadyaHimi, upadyaHimiCombo);
+            ut.ShowForm(DBCore.UtilityDataName.UpadyaHimi, label39.Text);
+            UpdateUtility(DBCore.UtilityDataName.UpadyaHimi, upadyaHimiCombo);
         }
 
         private void buttonX2_Click(object sender, EventArgs e)
@@ -1443,8 +1443,8 @@ namespace MahamewnawaInfo.Forms
         private void addLangButton_Click(object sender, EventArgs e)
         {
             frmUtilityData ut = new frmUtilityData((int)userLevel);
-            ut.ShowForm((int)DBCore.UtilityDataName.OtherLang, "වෙනත් භාෂා");
-            UpdateUtility((int)DBCore.UtilityDataName.OtherLang, otherLangCombo);
+            ut.ShowForm(DBCore.UtilityDataName.OtherLang, "වෙනත් භාෂා");
+            UpdateUtility(DBCore.UtilityDataName.OtherLang, otherLangCombo);
         }
 
         private void setLanguageLabels()
@@ -1495,8 +1495,8 @@ namespace MahamewnawaInfo.Forms
         private void buttonX10_Click(object sender, EventArgs e)
         {
             frmUtilityData ut = new frmUtilityData((int)userLevel);
-            ut.ShowForm((int)DBCore.UtilityDataName.PlaceUpasampada, label28.Text);
-            UpdateUtility((int)DBCore.UtilityDataName.PlaceUpasampada, upasampannaPlaceComboBoxEx);
+            ut.ShowForm(DBCore.UtilityDataName.PlaceUpasampada, label28.Text);
+            UpdateUtility(DBCore.UtilityDataName.PlaceUpasampada, upasampannaPlaceComboBoxEx);
         }
 
 
@@ -1508,8 +1508,8 @@ namespace MahamewnawaInfo.Forms
         private void buttonX11_Click(object sender, EventArgs e)
         {
             frmUtilityData ut = new frmUtilityData((int)userLevel);
-            ut.ShowForm((int)DBCore.UtilityDataName.placeRobing, label19.Text);
-            UpdateUtility((int)DBCore.UtilityDataName.placeRobing, templaRobingTookCombo);
+            ut.ShowForm(DBCore.UtilityDataName.placeRobing, label19.Text);
+            UpdateUtility(DBCore.UtilityDataName.placeRobing, templaRobingTookCombo);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -1524,8 +1524,8 @@ namespace MahamewnawaInfo.Forms
         private void buttonX13_Click(object sender, EventArgs e)
         {
             frmUtilityData ut = new frmUtilityData((int)userLevel);
-            ut.ShowForm((int)DBCore.UtilityDataName.Country, label43.Text);
-            UpdateUtility((int)DBCore.UtilityDataName.Country, countryCombo);
+            ut.ShowForm(DBCore.UtilityDataName.Country, label43.Text);
+            UpdateUtility(DBCore.UtilityDataName.Country, countryCombo);
         }
 
         private void dateOfRobingDtm_ValueChanged(object sender, EventArgs e)

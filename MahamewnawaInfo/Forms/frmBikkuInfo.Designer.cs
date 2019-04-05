@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBikkuInfo));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBikkuInfo));
             this.findButton = new DevComponents.DotNetBar.ButtonX();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -59,7 +59,6 @@
             this.nameOfAssumedAtRobinCombo = new System.Windows.Forms.ComboBox();
             this.templaRobingTookCombo = new System.Windows.Forms.ComboBox();
             this.passportNumbrtTextBoxX = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonX11 = new DevComponents.DotNetBar.ButtonX();
             this.templaResidenceCombo = new System.Windows.Forms.ComboBox();
             this.districtcomboBox = new System.Windows.Forms.ComboBox();
@@ -94,7 +93,6 @@
             this.label31 = new System.Windows.Forms.Label();
             this.sajjayanaCheckbox = new System.Windows.Forms.CheckBox();
             this.dharmaDeshanaCheckbox = new System.Windows.Forms.CheckBox();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -220,7 +218,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fileComlumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.downloadCOlumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteBtn = new DevComponents.DotNetBar.ButtonX();
             this.addbtn = new DevComponents.DotNetBar.ButtonX();
@@ -233,7 +230,6 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.captionName = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.labelX20 = new DevComponents.DotNetBar.LabelX();
@@ -241,23 +237,25 @@
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.prevBtn = new DevComponents.DotNetBar.ButtonX();
             this.nextBtn = new DevComponents.DotNetBar.ButtonX();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusLbl = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.downloadCOlumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panelEx3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateOfRobingDtm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateOfRobingBYDtm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateofCameDtm)).BeginInit();
             this.otherLangGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dobDtm)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -285,6 +283,8 @@
             this.panelEx2.SuspendLayout();
             this.tabControlPanel2.SuspendLayout();
             this.groupPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // findButton
@@ -652,17 +652,6 @@
             this.passportNumbrtTextBoxX.Name = "passportNumbrtTextBoxX";
             this.passportNumbrtTextBoxX.Size = new System.Drawing.Size(105, 26);
             this.passportNumbrtTextBoxX.TabIndex = 18;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1076, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(15, 16);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 102;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // buttonX11
             // 
@@ -1148,22 +1137,6 @@
             this.dharmaDeshanaCheckbox.Size = new System.Drawing.Size(15, 14);
             this.dharmaDeshanaCheckbox.TabIndex = 24;
             this.dharmaDeshanaCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.AccessibleName = "";
-            this.pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(822, 9);
-            this.pictureBox.MaximumSize = new System.Drawing.Size(250, 250);
-            this.pictureBox.MinimumSize = new System.Drawing.Size(250, 250);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(250, 250);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox.TabIndex = 36;
-            this.pictureBox.TabStop = false;
-            this.pictureBox.Tag = "";
-            this.pictureBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDoubleClick);
             // 
             // label26
             // 
@@ -2853,17 +2826,6 @@
             this.fileComlumn.ReadOnly = true;
             this.fileComlumn.Width = 230;
             // 
-            // downloadCOlumn
-            // 
-            this.downloadCOlumn.FillWeight = 28.36186F;
-            this.downloadCOlumn.HeaderText = "";
-            this.downloadCOlumn.Image = global::MahamewnawaInfo.Properties.Resources.download;
-            this.downloadCOlumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.downloadCOlumn.Name = "downloadCOlumn";
-            this.downloadCOlumn.ReadOnly = true;
-            this.downloadCOlumn.Visible = false;
-            this.downloadCOlumn.Width = 30;
-            // 
             // Data
             // 
             this.Data.HeaderText = "Data";
@@ -2967,16 +2929,6 @@
             this.captionName.Name = "captionName";
             this.captionName.Size = new System.Drawing.Size(0, 20);
             this.captionName.TabIndex = 107;
-            // 
-            // button1
-            // 
-            this.button1.Image = global::MahamewnawaInfo.Properties.Resources.refresh;
-            this.button1.Location = new System.Drawing.Point(1076, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 20);
-            this.button1.TabIndex = 40;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabControlPanel2
             // 
@@ -3111,17 +3063,6 @@
             this.nextBtn.Visible = false;
             this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.FillWeight = 28.36186F;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::MahamewnawaInfo.Properties.Resources.download;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Visible = false;
-            this.dataGridViewImageColumn1.Width = 30;
-            // 
             // timer1
             // 
             this.timer1.Interval = 2000;
@@ -3137,6 +3078,65 @@
             this.statusLbl.Size = new System.Drawing.Size(0, 15);
             this.statusLbl.TabIndex = 46;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 28.36186F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::MahamewnawaInfo.Properties.Resources.download;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Visible = false;
+            this.dataGridViewImageColumn1.Width = 30;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::MahamewnawaInfo.Properties.Resources.refresh;
+            this.button1.Location = new System.Drawing.Point(1076, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(20, 20);
+            this.button1.TabIndex = 40;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1076, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(15, 16);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 102;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.AccessibleName = "";
+            this.pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Location = new System.Drawing.Point(822, 9);
+            this.pictureBox.MaximumSize = new System.Drawing.Size(250, 250);
+            this.pictureBox.MinimumSize = new System.Drawing.Size(250, 250);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox.TabIndex = 36;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.Tag = "";
+            this.pictureBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDoubleClick);
+            // 
+            // downloadCOlumn
+            // 
+            this.downloadCOlumn.FillWeight = 28.36186F;
+            this.downloadCOlumn.HeaderText = "";
+            this.downloadCOlumn.Image = global::MahamewnawaInfo.Properties.Resources.download;
+            this.downloadCOlumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.downloadCOlumn.Name = "downloadCOlumn";
+            this.downloadCOlumn.ReadOnly = true;
+            this.downloadCOlumn.Visible = false;
+            this.downloadCOlumn.Width = 30;
+            // 
             // frmBikkuInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3151,6 +3151,7 @@
             this.Controls.Add(this.addbtn);
             this.Controls.Add(this.deleteBtn);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1130, 633);
@@ -3168,7 +3169,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numberNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateOfRobingDtm)).EndInit();
@@ -3178,7 +3178,6 @@
             this.otherLangGroupBox.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dobDtm)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -3215,6 +3214,8 @@
             this.tabControlPanel2.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

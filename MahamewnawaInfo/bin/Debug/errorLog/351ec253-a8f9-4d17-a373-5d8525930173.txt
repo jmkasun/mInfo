@@ -1,0 +1,16 @@
+Unable to cast object of type 'System.Windows.Forms.DataGridViewTextBoxCell' to type 'System.IConvertible'.	   at System.Convert.ToInt32(Object value)
+   at MahamewnawaInfo.Forms.frmChangeRequest.dataGridView1_UserDeletingRow(Object sender, DataGridViewRowCancelEventArgs e) in D:\Projects Kasun\mInfo\MahamewnawaInfo\Forms\frmChangeRequest.cs:line 105
+   at System.Windows.Forms.DataGridView.OnUserDeletingRow(DataGridViewRowCancelEventArgs e)
+   at System.Windows.Forms.DataGridView.ProcessDeleteKey(Keys keyData)
+   at System.Windows.Forms.DataGridView.ProcessDataGridViewKey(KeyEventArgs e)
+   at System.Windows.Forms.DataGridView.OnKeyDown(KeyEventArgs e)
+   at System.Windows.Forms.Control.ProcessKeyEventArgs(Message& m)
+   at System.Windows.Forms.DataGridView.ProcessKeyEventArgs(Message& m)
+   at System.Windows.Forms.Control.WmKeyChar(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at MahamewnawaInfo.Program.Main() in D:\Projects Kasun\mInfo\MahamewnawaInfo\Program.cs:line 22	----------------------------------------------------	

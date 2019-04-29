@@ -198,7 +198,7 @@ namespace MahamewnawaInfo.Reporting
 
                 case "-------- N/A --------":
                     {
-                       
+
                         return;
                     }
 
@@ -224,12 +224,12 @@ namespace MahamewnawaInfo.Reporting
 
         private void AddAbilities(ComboBox combo)
         {
-            combo.Items.AddRange(new string[] { "ධර්ම දේශනා", "වන්දනා", "සජ්ඣායනා"});
+            combo.Items.AddRange(new string[] { "ධර්ම දේශනා", "වන්දනා", "සජ්ඣායනා" });
         }
 
         private void AddBhikkuType(ComboBox combo)
         {
-            combo.Items.AddRange(new string[] { "උපසම්පදා", "සාමනේර"});
+            combo.Items.AddRange(new string[] { "උපසම්පදා", "සාමනේර" });
         }
 
         private void AddBhikkuPosts(ComboBox combo)
@@ -244,7 +244,7 @@ namespace MahamewnawaInfo.Reporting
 
         private void AddLanguages(ComboBox combo)
         {
-            combo.Items.AddRange(new string[] { "සිංහල","දෙමළ","ඉංග්‍රීසි","හින්දි","" });
+            combo.Items.AddRange(new string[] { "සිංහල", "දෙමළ", "ඉංග්‍රීසි", "හින්දි", "" });
         }
 
 
@@ -288,6 +288,14 @@ namespace MahamewnawaInfo.Reporting
 
             filter2FromDate.Visible = filter2Todate.Visible = filter2text.Visible = filter2Combo.Visible = false;
             ComboIndexChanged((ComboBox)sender);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (BikkuInfo b = new BikkuInfo(true))
+            {
+                this.dataGridView1.DataSource = b.SelectBhikkuCustomReport(1);
+            }
         }
     }
 }

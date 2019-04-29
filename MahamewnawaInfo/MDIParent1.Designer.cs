@@ -68,13 +68,18 @@
             this.btnSanghaUpasthayaka = new DevComponents.DotNetBar.ButtonItem();
             this.labelItem21 = new DevComponents.DotNetBar.LabelItem();
             this.labelItem22 = new DevComponents.DotNetBar.LabelItem();
+            this.customReportButton = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
+            this.buttonItem16 = new DevComponents.DotNetBar.ButtonItem();
             this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
+            this.buttonItem17 = new DevComponents.DotNetBar.ButtonItem();
             this.labelItem10 = new DevComponents.DotNetBar.LabelItem();
+            this.changeButton = new DevComponents.DotNetBar.ButtonItem();
             this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
             this.labelItem5 = new DevComponents.DotNetBar.LabelItem();
             this.labelItem9 = new DevComponents.DotNetBar.LabelItem();
+            this.buttonItem9 = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
             this.office2007StartButton1 = new DevComponents.DotNetBar.Office2007StartButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
@@ -94,10 +99,6 @@
             this.buttonItem15 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem19 = new DevComponents.DotNetBar.ButtonItem();
             this.labelItem14 = new DevComponents.DotNetBar.LabelItem();
-            this.buttonItem16 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem17 = new DevComponents.DotNetBar.ButtonItem();
-            this.changeButton = new DevComponents.DotNetBar.ButtonItem();
-            this.customReportButton = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -231,6 +232,7 @@
             this.labelItem10,
             this.changeButton,
             this.labelItem2,
+            this.buttonItem9,
             this.ribbonTabItem1});
             this.ribbonControl1.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
@@ -240,7 +242,7 @@
             this.office2007StartButton1,
             this.buttonItem1,
             this.qatCustomizeItem1});
-            this.ribbonControl1.Size = new System.Drawing.Size(935, 105);
+            this.ribbonControl1.Size = new System.Drawing.Size(935, 126);
             this.ribbonControl1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 8;
@@ -251,10 +253,10 @@
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonPanel1.Controls.Add(this.ribbonBar1);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 56);
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 69);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(935, 47);
+            this.ribbonPanel1.Size = new System.Drawing.Size(935, 55);
             // 
             // 
             // 
@@ -300,7 +302,7 @@
             this.customReportButton});
             this.ribbonBar1.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar1.Name = "ribbonBar1";
-            this.ribbonBar1.Size = new System.Drawing.Size(811, 44);
+            this.ribbonBar1.Size = new System.Drawing.Size(811, 52);
             this.ribbonBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar1.TabIndex = 0;
             this.ribbonBar1.Text = "Bhikku Report";
@@ -432,6 +434,14 @@
             this.labelItem22.Name = "labelItem22";
             this.labelItem22.Text = "|";
             // 
+            // customReportButton
+            // 
+            this.customReportButton.FontBold = true;
+            this.customReportButton.Name = "customReportButton";
+            this.customReportButton.SubItemsExpandWidth = 14;
+            this.customReportButton.Text = "Custom Report";
+            this.customReportButton.Click += new System.EventHandler(this.customReportButton_Click);
+            // 
             // ribbonPanel2
             // 
             this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -460,16 +470,37 @@
             this.ribbonTabItem2.Name = "ribbonTabItem2";
             this.ribbonTabItem2.Panel = this.ribbonPanel2;
             // 
+            // buttonItem16
+            // 
+            this.buttonItem16.Image = global::MahamewnawaInfo.Properties.Resources.swMenuName3;
+            this.buttonItem16.ImagePosition = DevComponents.DotNetBar.eImagePosition.Bottom;
+            this.buttonItem16.Name = "buttonItem16";
+            this.buttonItem16.Click += new System.EventHandler(this.buttonItem16_Click);
+            // 
             // labelItem1
             // 
             this.labelItem1.Name = "labelItem1";
             this.labelItem1.Text = "|";
             this.labelItem1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // buttonItem17
+            // 
+            this.buttonItem17.Image = global::MahamewnawaInfo.Properties.Resources.AsapuMenuName;
+            this.buttonItem17.ImagePosition = DevComponents.DotNetBar.eImagePosition.Bottom;
+            this.buttonItem17.Name = "buttonItem17";
+            this.buttonItem17.Click += new System.EventHandler(this.buttonItem17_Click);
+            // 
             // labelItem10
             // 
             this.labelItem10.Name = "labelItem10";
             this.labelItem10.Text = "|";
+            // 
+            // changeButton
+            // 
+            this.changeButton.Image = global::MahamewnawaInfo.Properties.Resources.ChangeListMenuName;
+            this.changeButton.ImagePosition = DevComponents.DotNetBar.eImagePosition.Bottom;
+            this.changeButton.Name = "changeButton";
+            this.changeButton.Click += new System.EventHandler(this.buttonItem18_Click);
             // 
             // labelItem2
             // 
@@ -488,6 +519,14 @@
             // 
             this.labelItem9.Name = "labelItem9";
             this.labelItem9.Text = "|";
+            // 
+            // buttonItem9
+            // 
+            this.buttonItem9.FontBold = true;
+            this.buttonItem9.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItem9.Name = "buttonItem9";
+            this.buttonItem9.Text = "අසපු වලට මාරු කිරීමේ ඉල්ලීම්";
+            this.buttonItem9.Click += new System.EventHandler(this.buttonItem9_Click);
             // 
             // ribbonTabItem1
             // 
@@ -654,35 +693,6 @@
             this.labelItem14.Name = "labelItem14";
             this.labelItem14.Text = "|";
             // 
-            // buttonItem16
-            // 
-            this.buttonItem16.Image = global::MahamewnawaInfo.Properties.Resources.swMenuName3;
-            this.buttonItem16.ImagePosition = DevComponents.DotNetBar.eImagePosition.Bottom;
-            this.buttonItem16.Name = "buttonItem16";
-            this.buttonItem16.Click += new System.EventHandler(this.buttonItem16_Click);
-            // 
-            // buttonItem17
-            // 
-            this.buttonItem17.Image = global::MahamewnawaInfo.Properties.Resources.AsapuMenuName;
-            this.buttonItem17.ImagePosition = DevComponents.DotNetBar.eImagePosition.Bottom;
-            this.buttonItem17.Name = "buttonItem17";
-            this.buttonItem17.Click += new System.EventHandler(this.buttonItem17_Click);
-            // 
-            // changeButton
-            // 
-            this.changeButton.Image = global::MahamewnawaInfo.Properties.Resources.ChangeListMenuName;
-            this.changeButton.ImagePosition = DevComponents.DotNetBar.eImagePosition.Bottom;
-            this.changeButton.Name = "changeButton";
-            this.changeButton.Click += new System.EventHandler(this.buttonItem18_Click);
-            // 
-            // customReportButton
-            // 
-            this.customReportButton.FontBold = true;
-            this.customReportButton.Name = "customReportButton";
-            this.customReportButton.SubItemsExpandWidth = 14;
-            this.customReportButton.Text = "Custom Report";
-            this.customReportButton.Click += new System.EventHandler(this.customReportButton_Click);
-            // 
             // MDIParent1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -778,6 +788,7 @@
         private DevComponents.DotNetBar.LabelItem labelItem21;
         private DevComponents.DotNetBar.LabelItem labelItem22;
         private DevComponents.DotNetBar.ButtonItem customReportButton;
+        private DevComponents.DotNetBar.ButtonItem buttonItem9;
     }
 }
 

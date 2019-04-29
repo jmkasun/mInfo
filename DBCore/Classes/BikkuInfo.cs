@@ -414,6 +414,14 @@ namespace DBCore.Classes
             return this;
         }
 
+        public DataTable SelectBhikkuCustomReport(int ID)
+        {
+
+            AddParameter("@p_ID", ID);
+
+            return GetTable("bikku_CustomReprort");
+        }
+
         private void SetFields(MySqlDataReader reader)
         {
             NIC = reader.GetString(0);

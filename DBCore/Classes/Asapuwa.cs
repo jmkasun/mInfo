@@ -173,6 +173,24 @@ namespace DBCore.Classes
             combo.ValueMember = "ID";
         }
 
+
+
+        public void BindToCombo(ComboBox[] comboList)
+        {
+            DataTable tbl = SelectAll();
+
+            foreach (var combo in comboList)
+            {
+                combo.DataSource = tbl.Copy();
+
+                combo.DisplayMember = "AsapuwaName";
+                combo.ValueMember = "ID";
+
+                combo.SelectedIndex = -1;
+            }
+        }
+
+
         public void BindToComboHeldUpasampada(ComboBox combo)
         {
             DataTable tbl = SelectAllHeldUpasampada();

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DBCore.Common;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace DBCore.Classes
 {
@@ -109,7 +110,19 @@ namespace DBCore.Classes
 
         public System.Data.DataTable SelectAll()
         {
-            throw new NotImplementedException();
+            System.Data.DataTable listTbl = new System.Data.DataTable();
+            listTbl.Columns.Add(new System.Data.DataColumn("ID",typeof(int)));
+            listTbl.Columns.Add(new System.Data.DataColumn("FromDate"));
+
+            using (MySqlDataReader reader = ExecuteReader("ChangeList_Sel"))
+            {
+                while (reader.Read())
+                {
+                    listTbl.Rows.Add(reader.GetInt32(0), string.Format("{0} සිට {1} දක්වා ", reader.GetDateTime(1).ToString("yyyy-MMM-dd"), reader.GetDateTime(2).ToString("yyyy-MMM-dd")));
+                }
+            }
+
+            return listTbl;
         }
 
         public int Delete()
@@ -191,6 +204,16 @@ namespace DBCore.Classes
 
             AddParameter("@p_ID", ID);
             ExecuteNonQueryOutput("ChangeList_DeleteHistry");
+        }
+
+        public void BindToCombo(ComboBox combo)
+        {
+            combo.DataSource = SelectAll();
+
+            combo.DisplayMember = "FromDate";
+            combo.ValueMember = "ID";
+
+            ((System.Data.DataTable)combo.DataSource).DefaultView.Sort = "FromDate DESC";
         }
     }
 

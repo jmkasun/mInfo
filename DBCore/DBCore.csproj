@@ -84,6 +84,7 @@
     <Compile Include="Classes\AsapuwaHistryCurrentBhikku.cs" />
     <Compile Include="Classes\BhikkuAsapuHistry.cs" />
     <Compile Include="Classes\ChangeList.cs" />
+    <Compile Include="Classes\ChangelistRequest.cs" />
     <Compile Include="Classes\UtilityData.cs" />
     <Compile Include="Classes\District.cs" />
     <Compile Include="Classes\BikkuInfo.cs" />

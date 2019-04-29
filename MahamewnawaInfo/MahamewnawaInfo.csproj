@@ -170,6 +170,12 @@
     <Compile Include="Forms\frmAsapu.Designer.cs">
       <DependentUpon>frmAsapu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmChangeRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmChangeRequest.Designer.cs">
+      <DependentUpon>frmChangeRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmReportViwer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,9 @@
     <EmbeddedResource Include="Forms\frmAsapu.resx">
       <DependentUpon>frmAsapu.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmChangeRequest.resx">
+      <DependentUpon>frmChangeRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmReportViwer.resx">
       <DependentUpon>frmReportViwer.cs</DependentUpon>

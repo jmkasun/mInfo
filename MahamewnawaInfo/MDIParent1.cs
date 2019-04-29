@@ -36,7 +36,7 @@ namespace MahamewnawaInfo
         private Form rptAllBhikkuImg;
         private Form rptSanghaUpasthayaka;
         private Form rptCustomReport;
-
+        private Form frmChangeRequest;
 
         public MDIParent1()
         {
@@ -568,6 +568,26 @@ namespace MahamewnawaInfo
                 else
                 {
                     rptCustomReport.Activate();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonItem9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (frmChangeRequest == null || frmChangeRequest.MdiParent == null)
+                {
+                    frmChangeRequest = new frmChangeRequest();
+                    ViewChildForm(frmChangeRequest);
+                }
+                else
+                {
+                    frmChangeRequest.Activate();
                 }
             }
             catch (Exception ex)

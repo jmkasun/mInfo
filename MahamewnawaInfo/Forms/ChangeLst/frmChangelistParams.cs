@@ -122,7 +122,7 @@ namespace MahamewnawaInfo.Forms
                 //LoadChangeListHistry(changeListID,cLIst.SelectChangeList(changeListID));
 
                 frmChangeList cng = new frmChangeList();
-                cng.MdiParent = this.MdiParent;
+               // cng.MdiParent = this.MdiParent;
                 cng.LoadForm(changeList, cLIst.SelectChangeList(changeList.ID));
                 this.Close();
             }

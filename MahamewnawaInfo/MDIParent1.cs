@@ -81,7 +81,7 @@ namespace MahamewnawaInfo
                 //frmObj.Location = new Point(frmLocationX, frmLocationY);
 
                 frmObj.StartPosition = FormStartPosition.CenterScreen;
-                frmObj.MdiParent = this;
+                //frmObj.MdiParent = this;
                 frmObj.Show();
 
             }
@@ -280,7 +280,7 @@ namespace MahamewnawaInfo
                 if (frmChangeList == null || frmChangeList.MdiParent == null)
                 {
                     frmChangeList = new frmChangelistParams();
-                    frmChangeList.MdiParent = this;
+                  //  frmChangeList.MdiParent = this;
                     frmChangeList.Location = new Point(0, 0);
                     frmChangeList.Show();
 
@@ -303,7 +303,7 @@ namespace MahamewnawaInfo
                 if (rptNameID == null || rptNameID.MdiParent == null)
                 {
                     rptNameID = new rptBhikkuStatus();
-                    rptNameID.MdiParent = this;
+                   // rptNameID.MdiParent = this;
                     rptNameID.Location = new Point(0, 0);
                     rptNameID.Show();
 
@@ -356,7 +356,7 @@ namespace MahamewnawaInfo
                 if (frmUsers == null || frmUsers.MdiParent == null)
                 {
                     frmUsers = new frmUser();
-                    frmUsers.MdiParent = this;
+                   // frmUsers.MdiParent = this;
                     frmUsers.Location = new Point(0, 0);
                     frmUsers.Show();
 
@@ -402,7 +402,7 @@ namespace MahamewnawaInfo
                 if (rptNameID == null || rptNameID.MdiParent == null)
                 {
                     rptNameID = new rptBhikkuStatus();
-                    rptNameID.MdiParent = this;
+                   // rptNameID.MdiParent = this;
                     rptNameID.Location = new Point(0, 0);
                     rptNameID.Show();
 
@@ -425,7 +425,7 @@ namespace MahamewnawaInfo
                 if (rptBinfo == null || rptBinfo.MdiParent == null)
                 {
                     rptBinfo = new rptBhikkuReport();
-                    rptBinfo.MdiParent = this;
+                   // rptBinfo.MdiParent = this;
                     rptBinfo.Location = new Point(0, 0);
                     rptBinfo.Show();
 
@@ -448,7 +448,7 @@ namespace MahamewnawaInfo
                 if (rptAllBhikkuSummary == null || rptAllBhikkuSummary.MdiParent == null)
                 {
                     rptAllBhikkuSummary = new rptAllBhikkuSummary();
-                    rptAllBhikkuSummary.MdiParent = this;
+                    //rptAllBhikkuSummary.MdiParent = this;
                     rptAllBhikkuSummary.Location = new Point(0, 0);
                     rptAllBhikkuSummary.Show();
 
@@ -471,7 +471,7 @@ namespace MahamewnawaInfo
                 if (rptAllBhikkuasp == null || rptAllBhikkuasp.MdiParent == null)
                 {
                     rptAllBhikkuasp = new rpt_AllbhikkuAsapuwa();
-                    rptAllBhikkuasp.MdiParent = this;
+                   // rptAllBhikkuasp.MdiParent = this;
                     rptAllBhikkuasp.Location = new Point(0, 0);
                     rptAllBhikkuasp.Show();
 
@@ -494,7 +494,7 @@ namespace MahamewnawaInfo
                 if (rptAllBhikkuImg == null || rptAllBhikkuImg.MdiParent == null)
                 {
                     rptAllBhikkuImg = new AllBhikkuImage();
-                    rptAllBhikkuImg.MdiParent = this;
+                   // rptAllBhikkuImg.MdiParent = this;
                     rptAllBhikkuImg.Location = new Point(0, 0);
                     rptAllBhikkuImg.Show();
 
@@ -517,7 +517,7 @@ namespace MahamewnawaInfo
                 if (rptSanghaUpasthayaka == null || rptSanghaUpasthayaka.MdiParent == null)
                 {
                     rptSanghaUpasthayaka = new rpt_SanghaUpasthayaka();
-                    rptSanghaUpasthayaka.MdiParent = this;
+                   // rptSanghaUpasthayaka.MdiParent = this;
                     rptSanghaUpasthayaka.Location = new Point(0, 0);
                     rptSanghaUpasthayaka.Show();
 
@@ -540,7 +540,7 @@ namespace MahamewnawaInfo
                 if (rptAllBhikkuaspImg == null || rptAllBhikkuaspImg.MdiParent == null)
                 {
                     rptAllBhikkuaspImg = new rpt_AllbhikkuAsapuwaWithImage();
-                    rptAllBhikkuaspImg.MdiParent = this;
+                   // rptAllBhikkuaspImg.MdiParent = this;
                     rptAllBhikkuaspImg.Location = new Point(0, 0);
                     rptAllBhikkuaspImg.Show();
 
@@ -584,6 +584,7 @@ namespace MahamewnawaInfo
                 {
                     frmChangeRequest = new frmChangeRequest();
                     ViewChildForm(frmChangeRequest);
+                    frmChangeRequest.MdiParent = null;
                 }
                 else
                 {

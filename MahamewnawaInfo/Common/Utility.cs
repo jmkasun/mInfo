@@ -319,6 +319,22 @@ namespace MahamewnawaInfo.Common
             }
         }
 
+        public static Image GetImageFromBase64(string base64String)
+        {
+            try
+            {
+                // set byte array
+                MemoryStream mem = new MemoryStream(Convert.FromBase64String(base64String));
+                // bikkuImage = picData;
+
+                return Image.FromStream(mem);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
 
         public static string GetBhuddhistlaDate(DateTime date)
         {

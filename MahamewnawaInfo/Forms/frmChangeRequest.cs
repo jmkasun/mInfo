@@ -63,6 +63,8 @@ namespace MahamewnawaInfo.Forms
                         }
                     }
 
+                    clear();
+                    cmbName.Select();
                     refreshData();
                 }
             }
@@ -77,6 +79,11 @@ namespace MahamewnawaInfo.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void clear()
+        {
+            cmbName.SelectedIndex = requestAsapuwa1.SelectedIndex = requestAsapuwa2.SelectedIndex = requestAsapuwa3.SelectedIndex = -1;
         }
 
         private void cmbChangeList_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,6 +108,22 @@ namespace MahamewnawaInfo.Forms
                     dataGridView1.DataSource = r.SelectAll((int)cmbChangeList.SelectedValue);
                 }
             }
+
+            int rowIndex = 0;
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Height = 60;
+                row.HeaderCell.Value = (++rowIndex).ToString();
+
+                if (row.Cells["ImageData"].Value != null)
+                {
+                    ((DataGridViewImageCell)row.Cells["image"]).ImageLayout = DataGridViewImageCellLayout.Zoom;
+                    ((DataGridViewImageCell)row.Cells["image"]).Value = Utility.GetImageFromBase64(row.Cells["ImageData"].Value.ToString());
+                    
+                }
+            }
+
+            dataGridView1.Refresh();
         }
 
         private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)

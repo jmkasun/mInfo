@@ -5,6 +5,7 @@ using System.Text;
 using DBCore.Common;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace DBCore.Classes
 {
@@ -108,13 +109,13 @@ namespace DBCore.Classes
             return list;
         }
 
-        public System.Data.DataTable SelectAll()
+        public System.Data.DataTable SelectAllFuture()
         {
             System.Data.DataTable listTbl = new System.Data.DataTable();
             listTbl.Columns.Add(new System.Data.DataColumn("ID",typeof(int)));
             listTbl.Columns.Add(new System.Data.DataColumn("FromDate"));
 
-            using (MySqlDataReader reader = ExecuteReader("ChangeList_Sel"))
+            using (MySqlDataReader reader = ExecuteReader("ChangeList_SelFuture"))
             {
                 while (reader.Read())
                 {
@@ -208,12 +209,17 @@ namespace DBCore.Classes
 
         public void BindToCombo(ComboBox combo)
         {
-            combo.DataSource = SelectAll();
+            combo.DataSource = SelectAllFuture();
 
             combo.DisplayMember = "FromDate";
             combo.ValueMember = "ID";
 
             ((System.Data.DataTable)combo.DataSource).DefaultView.Sort = "FromDate DESC";
+        }
+
+        public DataTable SelectAll()
+        {
+            throw new NotImplementedException();
         }
     }
 

@@ -45,10 +45,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.image = new System.Windows.Forms.DataGridViewImageColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asapuwa1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asapuwa2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asapuwa3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImageData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,6 +134,9 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -144,17 +149,21 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.image,
             this.name,
             this.asapuwa1,
             this.asapuwa2,
-            this.asapuwa3});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 114);
+            this.asapuwa3,
+            this.ImageData});
+            this.dataGridView1.Location = new System.Drawing.Point(15, 130);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 50;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(943, 373);
+            this.dataGridView1.Size = new System.Drawing.Size(970, 356);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.TabStop = false;
             this.dataGridView1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView1_UserDeletingRow);
@@ -177,6 +186,15 @@
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
+            // image
+            // 
+            this.image.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.image.HeaderText = "";
+            this.image.MinimumWidth = 60;
+            this.image.Name = "image";
+            this.image.ReadOnly = true;
+            this.image.Width = 60;
+            // 
             // name
             // 
             this.name.DataPropertyName = "NameAssumedAtRobing";
@@ -195,7 +213,7 @@
             this.asapuwa1.DefaultCellStyle = dataGridViewCellStyle3;
             this.asapuwa1.FillWeight = 176.6497F;
             this.asapuwa1.HeaderText = "ඉල්ලීම් කළ අසපුව 1";
-            this.asapuwa1.MinimumWidth = 200;
+            this.asapuwa1.MinimumWidth = 180;
             this.asapuwa1.Name = "asapuwa1";
             this.asapuwa1.ReadOnly = true;
             // 
@@ -206,7 +224,7 @@
             this.asapuwa2.DefaultCellStyle = dataGridViewCellStyle4;
             this.asapuwa2.FillWeight = 43.85622F;
             this.asapuwa2.HeaderText = "ඉල්ලීම් කළ අසපුව 2";
-            this.asapuwa2.MinimumWidth = 200;
+            this.asapuwa2.MinimumWidth = 180;
             this.asapuwa2.Name = "asapuwa2";
             this.asapuwa2.ReadOnly = true;
             // 
@@ -217,15 +235,24 @@
             this.asapuwa3.DefaultCellStyle = dataGridViewCellStyle5;
             this.asapuwa3.FillWeight = 43.85622F;
             this.asapuwa3.HeaderText = "ඉල්ලීම් කළ අසපුව 3";
-            this.asapuwa3.MinimumWidth = 200;
+            this.asapuwa3.MinimumWidth = 180;
             this.asapuwa3.Name = "asapuwa3";
             this.asapuwa3.ReadOnly = true;
+            // 
+            // ImageData
+            // 
+            this.ImageData.DataPropertyName = "ImageData";
+            this.ImageData.HeaderText = "ImageData";
+            this.ImageData.MinimumWidth = 100;
+            this.ImageData.Name = "ImageData";
+            this.ImageData.ReadOnly = true;
+            this.ImageData.Visible = false;
             // 
             // frmChangeRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 491);
+            this.ClientSize = new System.Drawing.Size(990, 491);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
@@ -257,9 +284,11 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewImageColumn image;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn asapuwa1;
         private System.Windows.Forms.DataGridViewTextBoxColumn asapuwa2;
         private System.Windows.Forms.DataGridViewTextBoxColumn asapuwa3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ImageData;
     }
 }

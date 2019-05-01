@@ -88,6 +88,7 @@ namespace DBCore.Classes
 
         public List<ChangeListBhikku> SelectChangeList(int listID)
         {
+
             List<ChangeListBhikku> list = new List<ChangeListBhikku>();
             AddParameter("@p_ChangeListID", listID);
 
@@ -102,6 +103,7 @@ namespace DBCore.Classes
                     lb.AsapuwaID = reader.GetInt32(2);
                     lb.Post = (BhikkuPost)reader.GetInt32(3);
                     lb.ChangeType = (BhikkuChangeType)reader.GetInt32(4);
+
                     list.Add(lb);
                 }
             }

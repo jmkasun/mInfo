@@ -35,13 +35,18 @@ namespace MahamewnawaInfo.Classes
         private Panel asapuwaNamepanel;
 
         public int ChanageListID; // ID of changelist table
+        System.Windows.Forms.ToolTip RequestAsapuTooltip = null;
+        Control toolTipParent = null;
+        string RequestedAsapuNames = string.Empty;
 
-        public ChangeListItemBhikku(string text, Panel panel, BikkuInfo bInfo, int width, AddDeleteChangeItem addChangeItemTable)
+        public ChangeListItemBhikku(string text, Panel panel, BikkuInfo bInfo, int width, AddDeleteChangeItem addChangeItemTable, System.Windows.Forms.ToolTip _requestAsapuTooltip, string _requestedAsapuNames)
         {
             try
             {
-                this.bInfo = bInfo;
 
+                this.bInfo = bInfo;
+                RequestAsapuTooltip = _requestAsapuTooltip;
+                RequestedAsapuNames = _requestedAsapuNames;
                 AddChangeItemTable = addChangeItemTable;
 
                 this.Size = new System.Drawing.Size(width + 80, 68);
@@ -97,8 +102,13 @@ namespace MahamewnawaInfo.Classes
 
                 BodyButton.Text = text;
 
-                AddObjectTopanel(panel, this);
+                if (!string.IsNullOrEmpty(RequestedAsapuNames))
+                {
+                    BodyButton.ForeColor = Color.FromArgb(0,0,80);
+                }
 
+                AddObjectTopanel(panel, this);
+                toolTipParent = this.Parent.Parent.Parent.Parent.Parent.Parent;
             }
             catch (Exception ex)
             {
@@ -306,6 +316,7 @@ namespace MahamewnawaInfo.Classes
             this.HeadButton.BackgroundImage = list[2];
             this.BodyButton.BackgroundImage = list[0];
             this.RearButton.BackgroundImage = list[1];
+            
         }
 
 
@@ -431,7 +442,7 @@ namespace MahamewnawaInfo.Classes
             this.BodyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BodyButton.FlatAppearance.BorderSize = 0;
             this.BodyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BodyButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BodyButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BodyButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.BodyButton.Location = new System.Drawing.Point(0, 0);
             this.BodyButton.Name = "BodyButton";
@@ -439,6 +450,8 @@ namespace MahamewnawaInfo.Classes
             this.BodyButton.TabIndex = 0;
             this.BodyButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BodyButton.UseVisualStyleBackColor = true;
+            this.BodyButton.MouseLeave += new System.EventHandler(this.BodyButton_MouseLeave);
+            this.BodyButton.MouseHover += new System.EventHandler(this.BodyButton_MouseHover);
             // 
             // RearButton
             // 
@@ -474,9 +487,6 @@ namespace MahamewnawaInfo.Classes
             this.imagePicbox.Size = new System.Drawing.Size(68, 68);
             this.imagePicbox.TabIndex = 0;
             this.imagePicbox.TabStop = false;
-            // 
-            // ChangeListItemBhikku
-            // 
             ((System.ComponentModel.ISupportInitialize)(this.imagePicbox)).EndInit();
             this.ResumeLayout(false);
 
@@ -491,7 +501,18 @@ namespace MahamewnawaInfo.Classes
             Asapuwa.minimizedAsapuwa.nameLabel.BackColor = Color.LightGreen;
         }
 
-       
+        private void BodyButton_MouseHover(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(RequestedAsapuNames))
+            {
+                RequestAsapuTooltip.Show(RequestedAsapuNames, toolTipParent, Cursor.Position.X - toolTipParent.Location.X + 15, Cursor.Position.Y - toolTipParent.Location.Y + 20, 10000);
+            }
+        }
+
+        private void BodyButton_MouseLeave(object sender, EventArgs e)
+        {
+            RequestAsapuTooltip.Hide(toolTipParent);
+        }
     }
 
     public struct ChangeListReportData

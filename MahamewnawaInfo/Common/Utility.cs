@@ -18,7 +18,6 @@ namespace MahamewnawaInfo.Common
 
     public class Utility
     {
-
         //// return appsetting from config file, according to given key
         public static string GetAppsetingData(string key)
         {
@@ -447,6 +446,72 @@ namespace MahamewnawaInfo.Common
             return new Guid(s.ToString());
         }
 
+        // Exports the datagridview values to Excel. 
+        /// </summary> 
+        public static void ExportToExcelFile(DataGridView dgvCityDetails)
+        {
+            // Creating a Excel object. 
+            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+            try
+            {
+
+                worksheet = workbook.ActiveSheet;
+
+                worksheet.Name = "ExportedFromDatGrid";
+
+                int cellRowIndex = 1;
+                int cellColumnIndex = 1;
+
+                //Loop through each row and read value from each column. 
+                for (int i = 0; i < dgvCityDetails.Rows.Count - 1; i++)
+                {
+                    for (int j = 0; j < dgvCityDetails.Columns.Count; j++)
+                    {
+                        if (dgvCityDetails.Columns[j].Visible == true)
+                        {
+                            // Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check. 
+                            if (cellRowIndex == 1)
+                            {
+                                worksheet.Cells[cellRowIndex, cellColumnIndex] = dgvCityDetails.Columns[j].HeaderText;
+                            }
+                            else
+                            {
+                                worksheet.Cells[cellRowIndex, cellColumnIndex] = dgvCityDetails.Rows[i].Cells[j].Value;
+                            }
+                            cellColumnIndex++;
+                        }
+                    }
+                    cellColumnIndex = 1;
+                    cellRowIndex++;
+                }
+
+                //Getting the location and file name of the excel to save from user. 
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                saveDialog.FilterIndex = 2;
+
+                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    workbook.SaveAs(saveDialog.FileName);
+                    MessageBox.Show("Export Successful");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                excel.Quit();
+                workbook = null;
+                excel = null;
+            }
+
+        }
+
     }
 
     public class HistryDatagridSort : IComparer
@@ -459,5 +524,5 @@ namespace MahamewnawaInfo.Common
         }
 
     }
-   
+
 }

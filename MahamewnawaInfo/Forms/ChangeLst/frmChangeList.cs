@@ -60,12 +60,14 @@ namespace MahamewnawaInfo.Forms
 
 
         DevComponents.DotNetBar.TabControlPanel tabControlPanel1 = null;
+        public System.Windows.Forms.ToolTip requestAsapuTooltip = null;
 
         public frmChangeList()
         {
             finalizedAsp = new List<int>();
             AsapuDict = new Dictionary<int, ChangeListItemAsapuwa>();
             InitializeComponent();
+            requestAsapuTooltip = new System.Windows.Forms.ToolTip();
         }
 
         public frmChangeList(int changeListID, DateTime fromDate, DateTime toDate)
@@ -178,10 +180,25 @@ namespace MahamewnawaInfo.Forms
 
             BhikkuDict = new Dictionary<int, ChangeListItemBhikku>();
 
+            Dictionary<int, string> crList = null;
+
+            using (ChangelistRequest cr = new ChangelistRequest(true))
+            {
+                crList = cr.SelectBhikkuAsapuwanme(ChangeListID);
+            }
+
+
             foreach (string name in bhikkuList.Keys)
             {
                 BikkuInfo bInfo = bhikkuList[name];
-                BhikkuDict.Add(bInfo.ID, new ChangeListItemBhikku(name, bhikkuNamelistPanel, bInfo, (int)maxNamelength, new AddDeleteChangeItem(AddDeleteChangeItem)));
+                string requestedAsapuNames = string.Empty;
+
+                if (crList.ContainsKey(bInfo.ID))
+                {
+                    requestedAsapuNames = crList[bInfo.ID];
+                }
+
+                BhikkuDict.Add(bInfo.ID, new ChangeListItemBhikku(name, bhikkuNamelistPanel, bInfo, (int)maxNamelength, new AddDeleteChangeItem(AddDeleteChangeItem), requestAsapuTooltip, requestedAsapuNames));
 
 
 

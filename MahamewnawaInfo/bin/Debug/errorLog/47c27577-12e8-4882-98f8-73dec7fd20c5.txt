@@ -1,0 +1,33 @@
+There is already an open DataReader associated with this Connection which must be closed first.	   at MySql.Data.MySqlClient.Interceptors.ExceptionInterceptor.Throw(Exception exception)
+   at MySql.Data.MySqlClient.MySqlCommand.Throw(Exception ex)
+   at MySql.Data.MySqlClient.MySqlCommand.CheckState()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at DBCore.Common.DBBase.ExecuteReader(String SQL) in D:\Projects Kasun\mInfo\DBCore\Common\DBBase.cs:line 131
+   at DBCore.Classes.ChangelistRequest.SelectBhikkuAsapuwanme(Int32 changeListId) in D:\Projects Kasun\mInfo\DBCore\Classes\ChangelistRequest.cs:line 71
+   at MahamewnawaInfo.Forms.frmChangeList.AddBhikkLabels(Object maxNamelength) in D:\Projects Kasun\mInfo\MahamewnawaInfo\Forms\ChangeLst\frmChangeList.cs:line 187
+   at MahamewnawaInfo.Forms.frmChangeList.frmChangeList_Load(Object sender, EventArgs e) in D:\Projects Kasun\mInfo\MahamewnawaInfo\Forms\ChangeLst\frmChangeList.cs:line 149
+   at System.Windows.Forms.Form.OnLoad(EventArgs e)
+   at DevComponents.DotNetBar.Office2007RibbonForm.OnLoad(EventArgs e)
+   at System.Windows.Forms.Form.OnCreateControl()
+   at System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   at System.Windows.Forms.Control.CreateControl()
+   at System.Windows.Forms.Control.WmShowWindow(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.Form.WmShowWindow(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.SendMessage(HandleRef hWnd, Int32 msg, Int32 wParam, Int32 lParam)
+   at System.Windows.Forms.Form.SetVisibleCore(Boolean value)
+   at System.Windows.Forms.Control.Show()
+   at MahamewnawaInfo.Forms.frmChangeList.LoadForm(ChangeList changeList, List`1 list) in D:\Projects Kasun\mInfo\MahamewnawaInfo\Forms\ChangeLst\frmChangeList.cs:line 501
+   at MahamewnawaInfo.Forms.frmChangelistParams.LoadChangeHistry(ChangeList changeList) in D:\Projects Kasun\mInfo\MahamewnawaInfo\Forms\ChangeLst\frmChangelistParams.cs:line 126
+   at MahamewnawaInfo.Forms.frmChangelistParams.lbl_MouseDoubleClick(Object sender, MouseEventArgs e) in D:\Projects Kasun\mInfo\MahamewnawaInfo\Forms\ChangeLst\frmChangelistParams.cs:line 115
+   at System.Windows.Forms.Control.OnMouseDoubleClick(MouseEventArgs e)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.Label.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.DebuggableCallback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+   at System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(IntPtr dwComponentID, Int32 reason, Int32 pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)
+   at MahamewnawaInfo.Program.Main() in D:\Projects Kasun\mInfo\MahamewnawaInfo\Program.cs:line 22	----------------------------------------------------	

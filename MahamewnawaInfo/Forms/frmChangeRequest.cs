@@ -40,6 +40,7 @@ namespace MahamewnawaInfo.Forms
             }
 
             finishLoadData = true;
+
             refreshData();
         }
 
@@ -105,22 +106,35 @@ namespace MahamewnawaInfo.Forms
             {
                 using (ChangelistRequest r = new ChangelistRequest(true))
                 {
-                    dataGridView1.DataSource = r.SelectAll((int)cmbChangeList.SelectedValue);
+                    var dataSource = r.SelectAll((int)cmbChangeList.SelectedValue);
+
+                    dataSource.Columns.Add("image", typeof(Image));
+
+                    foreach (DataRow rw in dataSource.Rows)
+                    {
+                        if (rw["ImageData"] != null)
+                        {
+                            rw["image"] = Utility.GetImageFromBase64(rw["ImageData"].ToString());
+
+                        }
+                    }
+                    
+                    dataGridView1.DataSource = dataSource;
                 }
             }
 
+            PrepareCells();
+        }
+
+        private void PrepareCells()
+        {
             int rowIndex = 0;
-            foreach(DataGridViewRow row in dataGridView1.Rows)
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 row.Height = 60;
                 row.HeaderCell.Value = (++rowIndex).ToString();
 
-                if (row.Cells["ImageData"].Value != null)
-                {
-                    ((DataGridViewImageCell)row.Cells["image"]).ImageLayout = DataGridViewImageCellLayout.Zoom;
-                    ((DataGridViewImageCell)row.Cells["image"]).Value = Utility.GetImageFromBase64(row.Cells["ImageData"].Value.ToString());
-                    
-                }
+                ((DataGridViewImageCell)row.Cells["image"]).ImageLayout = DataGridViewImageCellLayout.Zoom;
             }
 
             dataGridView1.Refresh();
@@ -142,6 +156,12 @@ namespace MahamewnawaInfo.Forms
             {
                 e.Cancel = true;
             }
+        }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Utility.ExportToExcelFile(dataGridView1);
         }
     }
 }

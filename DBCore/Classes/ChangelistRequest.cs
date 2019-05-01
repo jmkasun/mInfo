@@ -62,6 +62,40 @@ namespace DBCore.Classes
             return GetTable("ChangeListRequest_Select");
         }
 
+        public Dictionary<int,string> SelectBhikkuAsapuwanme(int changeListId)
+        {
+            var dataDic = new Dictionary<int, string>();
+
+            AddParameter("@p_changeListId", changeListId);
+
+            using (MySqlDataReader reader = ExecuteReader("ChangeListRequest_SelectAsapuName"))
+            {
+                while (reader.Read())
+                {
+                    string nameList = string.Empty;
+
+                    if (reader[1] != DBNull.Value)
+                    {
+                        nameList += reader[1] + "\n";
+                    }
+
+                    if (reader[2] != DBNull.Value)
+                    {
+                        nameList += reader[2] + "\n";
+                    }
+
+                    if (reader[3] != DBNull.Value)
+                    {
+                        nameList += reader[3] + "\n";
+                    }
+
+                    dataDic.Add(reader.GetInt32(0), nameList);
+                }
+            }
+
+            return dataDic;
+        }
+
         public int Update()
         {
             throw new NotImplementedException();

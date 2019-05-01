@@ -43,15 +43,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.image = new System.Windows.Forms.DataGridViewImageColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asapuwa1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asapuwa2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.asapuwa3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currentAsapuwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ImageData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbName
@@ -71,7 +78,7 @@
             this.requestAsapuwa1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.requestAsapuwa1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.requestAsapuwa1.FormattingEnabled = true;
-            this.requestAsapuwa1.Location = new System.Drawing.Point(366, 12);
+            this.requestAsapuwa1.Location = new System.Drawing.Point(28, 20);
             this.requestAsapuwa1.Name = "requestAsapuwa1";
             this.requestAsapuwa1.Size = new System.Drawing.Size(303, 26);
             this.requestAsapuwa1.TabIndex = 2;
@@ -82,7 +89,7 @@
             this.requestAsapuwa3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.requestAsapuwa3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.requestAsapuwa3.FormattingEnabled = true;
-            this.requestAsapuwa3.Location = new System.Drawing.Point(366, 81);
+            this.requestAsapuwa3.Location = new System.Drawing.Point(28, 85);
             this.requestAsapuwa3.Name = "requestAsapuwa3";
             this.requestAsapuwa3.Size = new System.Drawing.Size(303, 26);
             this.requestAsapuwa3.TabIndex = 4;
@@ -93,7 +100,7 @@
             this.requestAsapuwa2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.requestAsapuwa2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.requestAsapuwa2.FormattingEnabled = true;
-            this.requestAsapuwa2.Location = new System.Drawing.Point(366, 46);
+            this.requestAsapuwa2.Location = new System.Drawing.Point(28, 52);
             this.requestAsapuwa2.Name = "requestAsapuwa2";
             this.requestAsapuwa2.Size = new System.Drawing.Size(303, 26);
             this.requestAsapuwa2.TabIndex = 3;
@@ -138,9 +145,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -154,8 +162,9 @@
             this.asapuwa1,
             this.asapuwa2,
             this.asapuwa3,
+            this.currentAsapuwa,
             this.ImageData});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 130);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 129);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 50;
@@ -163,20 +172,10 @@
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(970, 356);
+            this.dataGridView1.Size = new System.Drawing.Size(1050, 356);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.TabStop = false;
             this.dataGridView1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView1_UserDeletingRow);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(716, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 53);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Id
             // 
@@ -189,7 +188,9 @@
             // image
             // 
             this.image.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.image.DataPropertyName = "image";
             this.image.HeaderText = "";
+            this.image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.image.MinimumWidth = 60;
             this.image.Name = "image";
             this.image.ReadOnly = true;
@@ -202,42 +203,58 @@
             this.name.DefaultCellStyle = dataGridViewCellStyle2;
             this.name.FillWeight = 135.6378F;
             this.name.HeaderText = "ස්වාමින්වහන්සේගේ නම";
-            this.name.MinimumWidth = 300;
+            this.name.MinimumWidth = 200;
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
             // asapuwa1
             // 
+            this.asapuwa1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.asapuwa1.DataPropertyName = "AsapuwaName1";
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.asapuwa1.DefaultCellStyle = dataGridViewCellStyle3;
             this.asapuwa1.FillWeight = 176.6497F;
             this.asapuwa1.HeaderText = "ඉල්ලීම් කළ අසපුව 1";
-            this.asapuwa1.MinimumWidth = 180;
+            this.asapuwa1.MinimumWidth = 165;
             this.asapuwa1.Name = "asapuwa1";
             this.asapuwa1.ReadOnly = true;
+            this.asapuwa1.Width = 165;
             // 
             // asapuwa2
             // 
+            this.asapuwa2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.asapuwa2.DataPropertyName = "AsapuwaName2";
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.asapuwa2.DefaultCellStyle = dataGridViewCellStyle4;
             this.asapuwa2.FillWeight = 43.85622F;
             this.asapuwa2.HeaderText = "ඉල්ලීම් කළ අසපුව 2";
-            this.asapuwa2.MinimumWidth = 180;
+            this.asapuwa2.MinimumWidth = 165;
             this.asapuwa2.Name = "asapuwa2";
             this.asapuwa2.ReadOnly = true;
+            this.asapuwa2.Width = 165;
             // 
             // asapuwa3
             // 
+            this.asapuwa3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.asapuwa3.DataPropertyName = "AsapuwaName3";
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.asapuwa3.DefaultCellStyle = dataGridViewCellStyle5;
             this.asapuwa3.FillWeight = 43.85622F;
             this.asapuwa3.HeaderText = "ඉල්ලීම් කළ අසපුව 3";
-            this.asapuwa3.MinimumWidth = 180;
+            this.asapuwa3.MinimumWidth = 165;
             this.asapuwa3.Name = "asapuwa3";
             this.asapuwa3.ReadOnly = true;
+            this.asapuwa3.Width = 165;
+            // 
+            // currentAsapuwa
+            // 
+            this.currentAsapuwa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.currentAsapuwa.DataPropertyName = "currentAsapuwa";
+            this.currentAsapuwa.HeaderText = "වර්ථමාන අසපුව";
+            this.currentAsapuwa.MinimumWidth = 165;
+            this.currentAsapuwa.Name = "currentAsapuwa";
+            this.currentAsapuwa.ReadOnly = true;
+            this.currentAsapuwa.Width = 165;
             // 
             // ImageData
             // 
@@ -248,25 +265,92 @@
             this.ImageData.ReadOnly = true;
             this.ImageData.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(716, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 53);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.requestAsapuwa3);
+            this.groupBox1.Controls.Add(this.requestAsapuwa1);
+            this.groupBox1.Controls.Add(this.requestAsapuwa2);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(369, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(341, 117);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ඉල්ලීම් කළ අසපු";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 89);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(15, 16);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 16);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(15, 16);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "1";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(716, 101);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Report";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // frmChangeRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 491);
+            this.ClientSize = new System.Drawing.Size(1064, 491);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbChangeList);
             this.Controls.Add(this.cmbName);
-            this.Controls.Add(this.requestAsapuwa2);
-            this.Controls.Add(this.requestAsapuwa3);
-            this.Controls.Add(this.requestAsapuwa1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChangeRequest";
             this.Text = "අසපු මාරුවීමේ ඉල්ලීම්";
             this.Load += new System.EventHandler(this.frmChangeRequest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,6 +373,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn asapuwa1;
         private System.Windows.Forms.DataGridViewTextBoxColumn asapuwa2;
         private System.Windows.Forms.DataGridViewTextBoxColumn asapuwa3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn currentAsapuwa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ImageData;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
     }
 }

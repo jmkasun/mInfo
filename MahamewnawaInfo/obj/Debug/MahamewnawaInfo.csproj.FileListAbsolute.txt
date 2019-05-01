@@ -187,7 +187,7 @@ D:\Projects Kasun\mInfo\MahamewnawaInfo\obj\Debug\MahamewnawaInfo.Reporting.Viwe
 D:\Projects Kasun\mInfo\MahamewnawaInfo\obj\Debug\MahamewnawaInfo.csproj.GenerateResource.Cache
 D:\Projects Kasun\mInfo\MahamewnawaInfo\bin\Debug\MySql.Data.dll
 D:\Projects Kasun\mInfo\MahamewnawaInfo\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-D:\Projects Kasun\mInfo\MahamewnawaInfo\bin\Debug\Google.Protobuf.dll
-D:\Projects Kasun\mInfo\MahamewnawaInfo\bin\Debug\MySql.Data.xml
 D:\Projects Kasun\mInfo\MahamewnawaInfo\obj\Debug\MahamewnawaInfo.Reporting.frm_CustomReport.resources
 D:\Projects Kasun\mInfo\MahamewnawaInfo\obj\Debug\MahamewnawaInfo.Forms.frmChangeRequest.resources
+D:\Projects Kasun\mInfo\MahamewnawaInfo\bin\Debug\Google.Protobuf.dll
+D:\Projects Kasun\mInfo\MahamewnawaInfo\bin\Debug\MySql.Data.xml
